@@ -1,0 +1,34 @@
+/* Larger than mobile */
+@media (min-width: 400px) {
+    .book{
+        max-height: 100px;
+    }
+}   
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+    .book{
+        max-height: 250px;
+    }
+}
+    
+/* Larger than tablet */
+@media (min-width: 750px) {
+    .book{
+        max-height: 300px;
+    }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    .book{
+        max-height: 400px;
+    }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    .book{
+        max-height: 450px;
+    }
+}
