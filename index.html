@@ -3,9 +3,26 @@
         <link rel="stylesheet" type="text/css" href="normalize.css" media="screen" />
         <!--http://getskeleton.com/ -->
         <link rel="stylesheet" type="text/css" href="skeleton.css" media="screen" />
+        <!--http://sixrevisions.com/css/fixed-navigation-bar/-->
+
+        <!-- for navbar on bottom use z-index: 9999; -->
         <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
     </head>
     <body onload="books.forEach(fillDocument)">
+        <nav class="fixed-nav-bar">
+            <div id="menu" class="menu">
+                <a class="sitename" href="fixed-navigation-bar.html">Fixed Nav Bar</a>
+                    <!-- Example responsive navigation menu  -->
+                    <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
+                    <ul class="menu-items">
+                        <li><a href="//sixrevisions.com">Home</a></li>
+                        <li><a href="//sixrevisions.com/about/">About</a></li>
+                        <li><a href="//sixrevisions.com/contact/">Contact</a></li>
+                        <li><a href="//twitter.com/sixrevisions">Twitter</a></li>
+                        <li><a href="//www.facebook.com/sixrevisions">Facebook</a></li>
+                    </ul>
+            </div>
+        </nav>
         <div id="mainbody">
         </div>
         <script>
