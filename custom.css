@@ -2,6 +2,10 @@
 @media (min-width: 400px) {
     .book{
         max-height: 100px;
+        max-width: 200px;
+    }
+    .description{
+
     }
 }   
 
@@ -9,6 +13,10 @@
 @media (min-width: 550px) {
     .book{
         max-height: 250px;
+        max-width: 200px;
+    }
+    .description{
+
     }
 }
     
@@ -16,6 +24,10 @@
 @media (min-width: 750px) {
     .book{
         max-height: 300px;
+        max-width: 200px;
+    }
+    .description{
+
     }
 }
 
@@ -23,6 +35,10 @@
 @media (min-width: 1000px) {
     .book{
         max-height: 400px;
+        max-width: 200px;
+    }
+    .description{
+
     }
 }
 
@@ -30,5 +46,9 @@
 @media (min-width: 1200px) {
     .book{
         max-height: 450px;
+        max-width: 200px;
+    }
+    .description{
+        
     }
 }

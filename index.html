@@ -5,36 +5,40 @@
         <link rel="stylesheet" type="text/css" href="skeleton.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
     </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="six columns">
-                    <img class="book" src="https://thumbs.dreamstime.com/z/open-book-vector-2363861.jpg"/>
-                </div>
-                <div class ="six columns book">
-                    <p>test</p>
-                </div>
-            </div>
+    <body onload="books.forEach(fillDocument)">
+        <div id="mainbody">
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="six columns">
-                    <p>test</p>
-                </div>
-                <div class ="six columns">
-                    <p>test</p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="six columns">
-                    <p>test</p>
-                </div>
-                <div class ="six columns">
-                    <p>test</p>
-                </div>
-            </div>
-        </div>
+        <script>
+            //function book(image,description){
+                //this.image = image;
+                //this.description = description;
+            //}
+            var books = [
+                { 
+                    title: "yo, home dog",
+                    description: "Lorem ipsum",
+                    image: "https://thumbs.dreamstime.com/z/open-book-vector-2363861.jpg",
+                    paypalButton: "<form action=\"https://www.sandbox.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\"> <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"> <input type=\"hidden\" name=\"hosted_button_id\" value=\"8JFVK4WTUT85S\"> <input type=\"image\" src=\"https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\"> <img alt=\"\" border=\"0\" src=\"https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\"> </form>"
+                }
+            ];
+            /*This function would be if hosting is moved off GitHub Pages. Simply call it within an event*/
+            /*function addBook(title, description){
+                books.push(
+                    {
+                        title:title,
+                        description:description
+                    }
+                );
+            }
+            */
+            /*example:
+            addBook("yo home dog", "lorem ipsum, lorem ipsum lorem ipsum");
+            */
+             //books.forEach(fillDocument);
+             function fillDocument(item, index){
+                 var fakeAjax = document.getElementById("mainbody");
+                 fakeAjax.innerHTML= fakeAjax.innerHTML + '<div class="container"><div class="row"><div class="four columns"><img class="book u-max-full-width" src="' + item.image + '"/></div><div class ="four columns book"><p class ="description">'+ item.description + '</p></div></div></div>' + item.paypalButton;
+             }
+        </script>
     </body>
 </html>
