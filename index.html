@@ -1,31 +1,31 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="normalize.css" media="screen" />
         <!--http://getskeleton.com/ -->
         <link rel="stylesheet" type="text/css" href="skeleton.css" media="screen" />
-        <!--http://sixrevisions.com/css/fixed-navigation-bar/-->
+        <!--http://sixrevisions.com/css/fixed-navigation-bar/ -->
 
         <!-- for navbar on bottom use z-index: 9999; -->
         <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
     </head>
-    <body onload="books.forEach(fillDocument)">
-        <nav class="fixed-nav-bar">
+    <!-- <body <onload="books.forEach(fillDocument)"> -->
+    <body>
+       <nav class="fixed-nav-bar">
             <div id="menu" class="menu">
-                <a class="sitename" href="fixed-navigation-bar.html">Fixed Nav Bar</a>
-                    <!-- Example responsive navigation menu  -->
-                    <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
+                <a class="sitename" href="#">CLEP</a>
+                   <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
                     <ul class="menu-items">
-                        <li><a href="//sixrevisions.com">Home</a></li>
-                        <li><a href="//sixrevisions.com/about/">About</a></li>
-                        <li><a href="//sixrevisions.com/contact/">Contact</a></li>
-                        <li><a href="//twitter.com/sixrevisions">Twitter</a></li>
-                        <li><a href="//www.facebook.com/sixrevisions">Facebook</a></li>
+                        <li id="home"><a href="#" onclick="goHome();">Home</a></li>
+                        <li id="about"><a href="#" onclick="goAbout();">About</a></li>
                     </ul>
             </div>
-        </nav>
+        </nav> -->
         <div id="mainbody">
         </div>
         <script>
+            var state = 0;
+            var fakeAjax = document.getElementById("mainbody");
             //function book(image,description){
                 //this.image = image;
                 //this.description = description;
@@ -53,9 +53,40 @@
             */
              //books.forEach(fillDocument);
              function fillDocument(item, index){
-                 var fakeAjax = document.getElementById("mainbody");
+                 clearBody();
                  fakeAjax.innerHTML= fakeAjax.innerHTML + '<div class="container"><div class="row"><div class="four columns"><img class="book u-max-full-width" src="' + item.image + '"/></div><div class ="four columns book"><p class ="description">'+ item.description + '</p></div></div></div>' + item.paypalButton;
              }
+             function goHome(){
+                  console.log("going home");
+                 //clearBody();
+                 fakeAjax.innerHTML = '<h1>Welcome Home</h1>'
+             }
+             function goAbout(){
+                 console.log("going about");
+                 //clearBody();
+                 fakeAjax.innerHTML = '<h1>Welcome About</h1>'
+             }
+             function clearBody(){
+                 while (fakeAjax.hasChildNodes()){
+                     fakeAjax.removeChild(fakeAjax.firstChild);
+                 }
+                 console.log("cleared");
+             }
+             books.forEach(fillDocument);
+             //home.addEventListener("click",goHome());
+             //about.addEventListener("click",goAbout());
+             //mainbody.addEventListener("click",books.forEach(fillDocument));
+             /*switch(state){
+                 case 0:
+                    books.forEach(fillDocument);
+                    break;
+                case 1:
+                    goHome();
+                    break;
+                case 2:
+                    goAbout;
+                    break;
+             }*/
         </script>
     </body>
 </html>
