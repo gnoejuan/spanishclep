@@ -4,58 +4,42 @@
         <!--http://getskeleton.com/ -->
         <link rel="stylesheet" type="text/css" href="skeleton.css" media="screen" />
         <!--http://sixrevisions.com/css/fixed-navigation-bar/-->
-
         <!-- for navbar on bottom use z-index: 9999; -->
         <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
     </head>
-    <body onload="books.forEach(fillDocument)">
-        <nav class="fixed-nav-bar">
-            <div id="menu" class="menu">
-                <a class="sitename" href="fixed-navigation-bar.html">Fixed Nav Bar</a>
-                    <!-- Example responsive navigation menu  -->
-                    <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
-                    <ul class="menu-items">
-                        <li><a href="//sixrevisions.com">Home</a></li>
-                        <li><a href="//sixrevisions.com/about/">About</a></li>
-                        <li><a href="//sixrevisions.com/contact/">Contact</a></li>
-                        <li><a href="//twitter.com/sixrevisions">Twitter</a></li>
-                        <li><a href="//www.facebook.com/sixrevisions">Facebook</a></li>
-                    </ul>
-            </div>
-        </nav>
-        <div id="mainbody">
-        </div>
-        <script>
-            //function book(image,description){
-                //this.image = image;
-                //this.description = description;
-            //}
-            var books = [
-                { 
-                    title: "yo, home dog",
-                    description: "Lorem ipsum",
-                    image: "https://thumbs.dreamstime.com/z/open-book-vector-2363861.jpg",
-                    paypalButton: "<form action=\"https://www.sandbox.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\"> <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"> <input type=\"hidden\" name=\"hosted_button_id\" value=\"8JFVK4WTUT85S\"> <input type=\"image\" src=\"https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\"> <img alt=\"\" border=\"0\" src=\"https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\"> </form>"
-                }
-            ];
-            /*This function would be if hosting is moved off GitHub Pages. Simply call it within an event*/
-            /*function addBook(title, description){
-                books.push(
-                    {
-                        title:title,
-                        description:description
-                    }
-                );
-            }
-            */
-            /*example:
-            addBook("yo home dog", "lorem ipsum, lorem ipsum lorem ipsum");
-            */
-             //books.forEach(fillDocument);
-             function fillDocument(item, index){
-                 var fakeAjax = document.getElementById("mainbody");
-                 fakeAjax.innerHTML= fakeAjax.innerHTML + '<div class="container"><div class="row"><div class="four columns"><img class="book u-max-full-width" src="' + item.image + '"/></div><div class ="four columns book"><p class ="description">'+ item.description + '</p></div></div></div>' + item.paypalButton;
-             }
-        </script>
+    <body>
+        <h3>What can you expect from our material?</h3>
+        <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being
+
+prepared for the exam? By completing our guide you will be able to test yourself. Our
+
+grading system has been tested with hundreds of students and we predict the following:
+
+90% and above: you are in very good shape. You will probably get the maximum
+
+credits.</p>
+<ul class="expectations">
+
+<li>80%-90%: you will probably get around 10 credits.</li>
+
+<li>70% - 80%: you are going to get the minimum credits.</li>
+
+<li>Less than 70%: you should get more training.</li>
+
+</ul>
+<h3>PROCESS:</h3>
+<ul class="process">
+<li> Purchase the material</li>
+
+<li> Provide your email so that we can send you the material</li>
+
+<li> The material will be sent within 24 hours</li>
+
+<li> Open the file and write your email (first question) so that the results
+
+can be sent to you immediately</li>
+
+<li>Check your email to view your grades</li>
+</ul>
     </body>
-</html>
+</html> 
