@@ -202,12 +202,12 @@ computer, laptop, or tablet.</p>
             /*let w stand for wrapper*/
             var wNode = document.createElement("ol");
             wNode.setAttribute("id","w" + qName.toString());
-            qList.appendChild(wNode);
+            qNode.appendChild(wNode);
             /* let a stand for answer */
             for (a in json.questions[q].wrong){
                 var aNode = document.createElement("li");
                 aNode.style.listStyle = "lower-alpha";
-                aNode.setAttribute("id", "q" + qName.toString() + "a" + (qName + 1).toString());
+                aNode.setAttribute("id", "q" + qName.toString() + "a" + (parseInt(a) + 1).toString());
                 aNode.innerHTML = json.questions[q].wrong[a];
                 wNode.appendChild(aNode);
             }
