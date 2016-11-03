@@ -116,3 +116,9 @@ a.sitename, a:visited.sitename {
 .hide {
   background-image: url(assets/up-arrow-icon.png);
 }
+ul.expectations{
+  list-style-type: circle;
+}
+ul.process {
+  list-style-type: disc;
+}

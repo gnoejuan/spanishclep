@@ -1,92 +1,236 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="normalize.css" media="screen" />
         <!--http://getskeleton.com/ -->
         <link rel="stylesheet" type="text/css" href="skeleton.css" media="screen" />
         <!--http://sixrevisions.com/css/fixed-navigation-bar/ -->
-
         <!-- for navbar on bottom use z-index: 9999; -->
+        <!-- http://www.seriouspizza.com/ -->
         <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
     </head>
-    <!-- <body <onload="books.forEach(fillDocument)"> -->
+<<<<<<< HEAD
     <body>
-       <nav class="fixed-nav-bar">
-            <div id="menu" class="menu">
-                <a class="sitename" href="#">CLEP</a>
-                   <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
-                    <ul class="menu-items">
-                        <li id="home"><a href="#" onclick="goHome();">Home</a></li>
-                        <li id="about"><a href="#" onclick="goAbout();">About</a></li>
-                    </ul>
-            </div>
-        </nav> -->
-        <div id="mainbody">
-        </div>
-        <script>
-            var state = 0;
-            var fakeAjax = document.getElementById("mainbody");
-            //function book(image,description){
-                //this.image = image;
-                //this.description = description;
-            //}
-            var books = [
-                { 
-                    title: "yo, home dog",
-                    description: "Lorem ipsum",
-                    image: "https://thumbs.dreamstime.com/z/open-book-vector-2363861.jpg",
-                    paypalButton: "<form action=\"https://www.sandbox.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\"> <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"> <input type=\"hidden\" name=\"hosted_button_id\" value=\"8JFVK4WTUT85S\"> <input type=\"image\" src=\"https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\"> <img alt=\"\" border=\"0\" src=\"https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\"> </form>"
-                }
-            ];
-            /*This function would be if hosting is moved off GitHub Pages. Simply call it within an event*/
-            /*function addBook(title, description){
-                books.push(
-                    {
-                        title:title,
-                        description:description
-                    }
-                );
+        <section id="quiz">
+
+        </section>
+        <h3>SpanishClep.com</h3>
+        <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com">spanishclep@gmail.com</a>
+        <a href="tel://1-512-626-4397">+1 (512) 626-4397</a>
+        <ul class="sidebar">
+            <li><strong>Material:</strong></li>
+            <li>Ser vs. Estar</li>
+            <li>Preterite vs. Imperfect</li>
+            <li>Subjunctive vs. Indicative</li>
+            <li>Total Verbs</li>
+            <li>Other grammar topics</li>
+            <li>Vocabulary I</li>
+            <li>Vocabulary II</li>
+            <li>Lectura I</li>
+            <li>Lectura II</li>
+        </ul>
+        <h3>What can you expect from our material?</h3>
+        <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being
+
+prepared for the exam? By completing our guide you will be able to test yourself. Our
+
+grading system has been tested with hundreds of students and we predict the following:
+
+90% and above: you are in very good shape. You will probably get the maximum
+
+credits.</p>
+<ul class="expectations">
+
+<li><em>80%-90%:</em> you will probably get around 10 credits.</li>
+
+<li><em>70% - 80%:</em> you are going to get the minimum credits.</li>
+
+<li><em>Less than 70%:</em> you should get more training.</li>
+
+</ul>
+<h3>PROCESS:</h3>
+<ul class="process">
+<li> Purchase the material</li>
+
+<li> Provide your email so that we can send you the material</li>
+
+<li> The material will be sent within 24 hours</li>
+
+<li> Open the file and write your email (first question) so that the results
+
+can be sent to you immediately</li>
+
+<li>Check your email to view your grades</li>
+</ul>
+<p>NOTE: You can work on the material by using your smart phone, iPad,
+
+computer, laptop, or tablet.</p>
+<script>
+    var iJson;
+    var json = {"questions":[
+    {
+        //"question" : "1. ¿__________ es la capital de Texas?", "answer1" : "Qué", "answer2" : "Cuál","answer3" : "Quién", "answer4": "Que"
+        "question" : "¿__________ es la capital de Texas?", "wrong" : ["Cuál","Quién","Que","Qué"], "right":"" 
+    },
+    {
+        //"question" : "2. ____________ (my) libro está sobre la mesa. Tu libro está debajo de la mesa.", "answer1" : "tu", "answer2" : "tú","answer3" : "mi", "answer4": "sus"
+        "question" : "____________ (my) libro está sobre la mesa. Tu libro está debajo de la mesa.", "wrong" : ["tu" ,"tú", "mi", "sus"], "right" : ""
+    },
+    {
+        //"question" :"3. Nueva York es una ciudad ______________.", "answer1" : "norteamericanos", "answer2" : "norteamericano","answer3" : "norteamericana", "answer4": "norteamericanas"
+        "question" :"Nueva York es una ciudad ______________.", "wrong" : [ "norteamericanos", "norteamericano","norteamericana","norteamericanas"], "right" : ""
+    },
+    {
+        //"question" :"4. Los estudiantes _______________  en la biblioteca.", "answer1" : "estudian", "answer2" : "estudien","answer3" : "estudiando", "answer4": "estudio"
+        "question" :"Los estudiantes _______________  en la biblioteca.", "wrong": ["estudian","estudien","estudiando","estudio"], "right" : ""
+    },
+    {
+        //"question" : "5. ____________ (this) libro es de mi sobrino.", "answer1" : "Ese", "answer2" : "Estos","answer3" : "Estas", "answer4": "Este"
+        "question" : " ____________ (this) libro es de mi sobrino.", "wrong": ["Ese", "Estos","Estas","Este"], "right" : ""
+    },
+    {
+        //"question" : "6. Los profesores ________________ tomar vacaciones durante el verano.", "answer1" : "quiere", "answer2" : "quiero","answer3" : "quieren", "answer4": "quieres"
+        "question" : "Los profesores ________________ tomar vacaciones durante el verano.","wrong": ["quiere","quiero","quieren","quieres"], "right" : ""
+    },
+    {
+        //"question" : "7. Este fin de semana nosotros ____________ a Houston.", "answer1" : "voy a ir", "answer2" : "vamos a irnos","answer3" : "vamos a ir", "answer4": "van a ir"
+        "question" : "Este fin de semana nosotros ____________ a Houston.","wrong": ["voy a ir","vamos a irnos","vamos a ir" ,"van a ir"], "right" : ""
+    },
+    {
+        //"question" : "8. Mis hermanos ______________ todos los días antes de ir a la escuela.", "answer1" : "se bañan", "answer2" : "nos bañamos","answer3" : "bañan", "answer4": "bañamos"
+        "question" : "Mis hermanos ______________ todos los días antes de ir a la escuela.", "wrong": ["se bañan","nos bañamos", "bañan","bañamos"], "right" : ""
+    },
+    {
+        //"question" : "9. Mi hermano _________________ una persona agradable. Pero hoy está enojado.", "answer1" : "es", "answer2" : "está","answer3" : "soy", "answer4": "estoy"
+        "question" : "Mi hermano _________________ una persona agradable. Pero hoy está enojado.", "wrong": [ "es","está", "soy","estoy"], "right" : ""
+    },
+    {
+        //"question" : "10. El partido de béisbol es en Dallas.  Dallas _________ en Texas.", "answer1" : "es", "answer2" : "está","answer3" : "soy", "answer4": "estoy"
+        "question" : "El partido de béisbol es en Dallas.  Dallas _________ en Texas.","wrong": ["es","está","soy","estoy"], "right" : ""
+    },
+    {
+        //"question" : "11. El verano en Texas es ___________________ en Nueva York.", "answer1" : "menos caliente", "answer2" : "más caliente que","answer3" : "tan caliente", "answer4": "tanto caliente"
+        "question" : "El verano en Texas es ___________________ en Nueva York.","wrong": ["menos caliente","más caliente que","tan caliente", "tanto caliente"], "right" : ""
+    },
+    {
+        //"question" : "12. Jupiter _______ el planeta __________ grande de nuestro sistema solar.", "answer1" : "es, más", "answer2" : "es, tanto","answer3" : "es, tan", "answer4": "es, tanto"
+        "question" : "Jupiter _______ el planeta __________ grande de nuestro sistema solar.","wrong": ["es, más","es, tanto","es, tan","es, tanto"], "right" : ""
+    },
+    {
+        //"question" : "13. Quiero comprar flores para mi madre.  Quiero ______________.", "answer1" : "comprárselas", "answer2" : "compráselos","answer3" : "se los comprar", "answer4": "se los compro"
+        "question" : "Quiero comprar flores para mi madre.  Quiero ______________.","wrong": ["comprárselas","compráselos","se los comprar", "se los compro"], "right" : ""
+    },
+    {
+        //"question" : "14. A Rolando ______  __________ nadar en el mar.", "answer1" : "se, gusta", "answer2" : "le, gustan","answer3" : "le, gusta", "answer4": "le, gustar"
+        "question" : "A Rolando ______  __________ nadar en el mar.","wrong": ["se, gusta","le, gustan","le, gusta","le, gustar"], "right" : ""
+    },
+    {
+        //"question" : "15. Anoche yo __________(ir) de compras porque necesitaba comprar un par de zapatos.", "answer1" : "fui", "answer2" : "fue","answer3" : "iré", "answer4": "voy"
+        "question" : "Anoche yo __________(ir) de compras porque necesitaba comprar un par de zapatos.","wrong": ["fui","fue","iré","voy"], "right" : ""
+    },
+    {
+        //"question" : "16. Quiero que Ud _________el periódico.", "answer1" : "lea", "answer2" : "lees","answer3" : "leo", "answer4": "leí"
+        "question" : "Quiero que Ud _________el periódico.","wrong": ["lea","lees","leo","leí"], "right" : ""
+    },
+    {
+        //"question" : "17. Busco un restaurante que ________________ comida china.", "answer1" : "sirva", "answer2" : "sirve","answer3" : "sirvió", "answer4": "servía"
+        "question" : "Busco un restaurante que ________________ comida china.","wrong": ["sirva","sirve","sirvió","servía"], "right" : ""
+    },
+    {
+        //"question" : "18. A nosotros nos molesta que Sofía no _________ saludablemente.", "answer1" : "comer", "answer2" : "comerá","answer3" : "comiera", "answer4": "coma"
+        "question" : "A nosotros nos molesta que Sofía no _________ saludablemente.","wrong": ["comer", "comerá", "comiera","coma"], "right" : ""   
+    },
+    {
+        //"question" : "19. Todos los veranos, nosotros _____________ a las montañas.", "answer1" : "fuimos", "answer2" : "íbamos","answer3" : "fueron", "answer4": "iban"
+        "question" : "Todos los veranos, nosotros _____________ a las montañas.","wrong": ["fuimos","íbamos","fueron","iban"], "right" : ""      
+    },
+    {
+        //"question" : "20. Yo __________(conducir) rápidamente cuando el policía me __________(detener).", "answer1" : "conducía, detuvo", "answer2" : "conduciendo, detenía","answer3" : "conducir, detuvo", "answer4": "conduje, detener"
+        "question" : "Yo __________(conducir) rápidamente cuando el policía me __________(detener).", "wrong": ["conducía, detuvo","conduciendo, detenía","conducir, detuvo","conduje, detener"], "right" : ""      
+    },
+    {
+        //"question" : "21. Es necesario escribir una carta para el director. La carta ya ______________________.", "answer1" : "es escrita", "answer2" : "haya escrita","answer3" : "está escrito", "answer4": "está escrita"
+        "question" : "Es necesario escribir una carta para el director. La carta ya ______________________.","wrong":["es escrita","haya escrita","está escrito","está escrita"], "right" : ""
+    },
+    {
+        //"question" : "22. Mañana ______________ de compras.", "answer1" : "iré", "answer2" : "fui","answer3" : "iba", "answer4": "fue"
+        "question" : "Mañana ______________ de compras.","wrong": ["iré","fui","iba","fue"], "right" : ""      
+    },
+    {
+        //"question" : "23. Iré al cine tan pronto como _____________ mi tarea.", "answer1" : "haga", "answer2" : "hice","answer3" : "haré", "answer4": "hago"
+        "question" : "Iré al cine tan pronto como _____________ mi tarea.","wrong": ["haga","hice","haré","hago"], "right" : ""        
+    },
+    {
+        //"question" : "24. Dudaba que Joaquín_________ a Europa.", "answer1" : "vaya", "answer2" : "fuera","answer3" : "irá", "answer4": "ir"
+        "question" : "Dudaba que Joaquín_________ a Europa.","wrong":["vaya","fuera","irá","ir"], "right" : ""
+    },
+    {
+        //"question" : "25. __________ un coche, si _____________uno.", "answer1" : "Compraría, necesito", "answer2" : "Compraría, necesitaré","answer3" : "Compraría, necesitara", "answer4": "Compraré, necesitaré"
+        "question" : "__________ un coche, si _____________uno.", "wrong": ["Compraría, necesito","Compraría, necesitaré","Compraría, necesitara","Compraré, necesitaré"], "right" : ""       
+    }
+        ]
+    };
+    /*function updateQuestion(int){
+        var quiz = document.getElementById("quiz");
+        quiz.innerHTML = "<h1>"+ json.questions[int].question + "</h1><br>";
+        var AnswerList = document.createElement("ul");
+        AnswerList.setAttribute("id", "listOfAnswers");
+        quiz.appendChild(AnswerList);
+        for (var i in json.questions[int].wrong){
+            var answerArray = json.questions[int].wrong;
+            var node = document.createElement("li");
+            node.innerHTML = answerArray[i];
+            AnswerList.appendChild(node);
+        }
+    }
+    updateQuestion(0);*/
+    /*temporary function to display all the questions*/
+    function displayAllQuestions(){
+        var quiz = document.getElementById("quiz");
+        /*Let q stand for the question*/
+        var qList = document.createElement("ol");
+        qList.setAttribute("id","questionList");
+        quiz.appendChild(qList);
+        var qName = 1;
+        /*this outer loop will print all the questions*/
+        for (var q in json.questions){
+            var qNode = document.createElement("li");
+            qNode.setAttribute("id","q" + qName.toString());
+            qNode.innerHTML = json.questions[q].question;
+            qList.appendChild(qNode);
+            /*following the advice here http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list, the questions will be
+            wrapped with a li element. In case the link 404s, the code is added to the bottom of the file*/
+            /*let w stand for wrapper*/
+            var wNode = document.createElement("ol");
+            wNode.setAttribute("id","w" + qName.toString());
+            qNode.appendChild(wNode);
+            /* let a stand for answer */
+            for (a in json.questions[q].wrong){
+                var aNode = document.createElement("li");
+                aNode.style.listStyle = "lower-alpha";
+                aNode.setAttribute("id", "q" + qName.toString() + "a" + (parseInt(a) + 1).toString());
+                aNode.innerHTML = json.questions[q].wrong[a];
+                wNode.appendChild(aNode);
             }
-            */
-            /*example:
-            addBook("yo home dog", "lorem ipsum, lorem ipsum lorem ipsum");
-            */
-             //books.forEach(fillDocument);
-             function fillDocument(item, index){
-                 clearBody();
-                 fakeAjax.innerHTML= fakeAjax.innerHTML + '<div class="container"><div class="row"><div class="four columns"><img class="book u-max-full-width" src="' + item.image + '"/></div><div class ="four columns book"><p class ="description">'+ item.description + '</p></div></div></div>' + item.paypalButton;
-             }
-             function goHome(){
-                  console.log("going home");
-                 //clearBody();
-                 fakeAjax.innerHTML = '<h1>Welcome Home</h1>'
-             }
-             function goAbout(){
-                 console.log("going about");
-                 //clearBody();
-                 fakeAjax.innerHTML = '<h1>Welcome About</h1>'
-             }
-             function clearBody(){
-                 while (fakeAjax.hasChildNodes()){
-                     fakeAjax.removeChild(fakeAjax.firstChild);
-                 }
-                 console.log("cleared");
-             }
-             books.forEach(fillDocument);
-             //home.addEventListener("click",goHome());
-             //about.addEventListener("click",goAbout());
-             //mainbody.addEventListener("click",books.forEach(fillDocument));
-             /*switch(state){
-                 case 0:
-                    books.forEach(fillDocument);
-                    break;
-                case 1:
-                    goHome();
-                    break;
-                case 2:
-                    goAbout;
-                    break;
-             }*/
-        </script>
+            qName++;
+        }
+    }
+displayAllQuestions();
+/*note to self
+--in regards to the question list:
+<ul>
+    <li>List item one</li>
+    <li>List item two with subitems:
+        <ul>
+            <li>Subitem 1</li>
+            <li>Subitem 2</li>
+        </ul>
+    </li>
+    <li>Final list item</li>
+</ul>
+
+*/
+</script>
     </body>
-</html>
+</html> 
