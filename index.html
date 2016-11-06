@@ -11,8 +11,12 @@
         <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
     </head>
     <body>
-        <section id="quiz">
+        <section id="quizWrapper">
+            <section id="QuizQuestions">
 
+            </section>
+            <button>Previous Question</button>
+            <button>Next Question</button>
         </section>
         <h3>SpanishClep.com</h3>
         <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com">spanishclep@gmail.com</a>
@@ -189,27 +193,27 @@ computer, laptop, or tablet.</p>
     updateQuestion(0);*/
     /*temporary function to display all the questions*/
     /*commenting out because I no longer need this.*/
-    function displayAllQuestions(){
+    /*function displayAllQuestions(){
         var quiz = document.getElementById("quiz");
         /*Let q stand for the question*/
-        var qList = document.createElement("ol");
+        /*var qList = document.createElement("ol");
         qList.setAttribute("id","questionList");
         quiz.appendChild(qList);
-        var qName = 1;
+        var qName = 1;*/
         /*this outer loop will print all the questions*/
-        for (var q in json.questions){
+/*        for (var q in json.questions){
             var qNode = document.createElement("li");
             qNode.setAttribute("id","q" + qName.toString());
             qNode.innerHTML = json.questions[q].question;
-            qList.appendChild(qNode);
+            qList.appendChild(qNode);*/
             /*following the advice here http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list, the questions will be
             wrapped with a li element. In case the link 404s, the code is added to the bottom of the file*/
            /*let w stand for wrapper*/
-            var wNode = document.createElement("ol");
+/*            var wNode = document.createElement("ol");
             wNode.setAttribute("id","w" + qName.toString());
-            qNode.appendChild(wNode);
+            qNode.appendChild(wNode);*/
             /* let a stand for answer */
-            for (a in json.questions[q].wrong){
+/*            for (a in json.questions[q].wrong){
                 var aNode = document.createElement("li");
                 aNode.style.listStyle = "lower-alpha";
                 aNode.setAttribute("id", "q" + qName.toString() + "a" + (parseInt(a) + 1).toString());
@@ -219,7 +223,7 @@ computer, laptop, or tablet.</p>
             qName++;
         }
     }
-displayAllQuestions();
+displayAllQuestions();*/
 /*note to self
 --in regards to the question list:
 <ul>
