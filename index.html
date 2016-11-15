@@ -174,9 +174,33 @@ computer, laptop, or tablet.</p>
     }
         ]
     };
+    /*the quiz section*/
+    var quiz = document.getElementById("QuizQuestions");
     /*create answer key */
     var answerKey=[];
     var selectedAnswers=[];
+    /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
+    var quizLength = json.questions.length;
+    var question = 0;
+    function generateQuiz(){
+        while(answerKey.length){
+            answerKey.pop();
+        }
+        for(IQ=0;IQ<quizLength;IQ++)
+        answerKey[IQ] = new Array();
+        answerKey[IQ] = [json.questions[Math.floor((Math.random() * 25))],""];
+        /*check if the question is already in the array*/
+        for(var questionCheck =0; questionCheck < answerKey.length; questionCheck++){
+            while (answerKey[questionCheck] == answerKey[IQ][0]){
+                answerKey[IQ][0] = json.questions[Math.floor((Math.random() * 25))];
+            }
+        }
+        answerKey[IQ][1] = json.questions[json.questions.indexOf(answerKey[IQ][0])].right;
+    }
+    function updateQuestion(int){
+
+    }
+    generateQuiz();
     /*function updateQuestion(int){
         var quiz = document.getElementById("quiz");
         quiz.innerHTML = "<h1>"+ json.questions[int].question + "</h1><br>";
