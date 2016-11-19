@@ -15,8 +15,8 @@
             <section id="QuizQuestions">
 
             </section>
-            <button>Previous Question</button>
-            <button>Next Question</button>
+            <button onclick="updateQuestion(-1);">Previous Question</button>
+            <button onclick="updateQuestion(1);">Next Question</button>
         </section>
         <h3>SpanishClep.com</h3>
         <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com">spanishclep@gmail.com</a>
@@ -177,30 +177,84 @@ computer, laptop, or tablet.</p>
     /*the quiz section*/
     var quiz = document.getElementById("QuizQuestions");
     /*create answer key */
+    var quizOrder = [];
+    var choiceOrder = [];
     var answerKey=[];
     var selectedAnswers=[];
     /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
     var quizLength = json.questions.length;
-    var question = 0;
+    var quizIterator = 0;
     function generateQuiz(){
         while(answerKey.length){
             answerKey.pop();
         }
-        for(IQ=0;IQ<quizLength;IQ++)
-        answerKey[IQ] = new Array();
-        answerKey[IQ] = [json.questions[Math.floor((Math.random() * 25))],""];
-        /*check if the question is already in the array*/
-        for(var questionCheck =0; questionCheck < answerKey.length; questionCheck++){
-            while (answerKey[questionCheck] == answerKey[IQ][0]){
-                answerKey[IQ][0] = json.questions[Math.floor((Math.random() * 25))];
+        while(selectedAnswers.length){
+            selectedAnswers.pop();
+        }
+        while(quizOrder.length < quizLength){
+            let selectedQuestion = Math.floor(Math.random()*quizLength);
+            if(quizOrder.indexOf(selectedQuestion) > -1) continue;
+            quizOrder[quizOrder.length] = selectedQuestion
+        }
+        while(choiceOrder.length < quizOrder.length){
+            let choices = [1,2,3,4];
+            let tempArray = [];
+            for (let i = choices.length - 1; i > 0; i--){
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = choices[i];
+                choices[i] = choices[j];
+                choices[j] = temp;
+            }
+            /*assuming each question only has 4 choices*/
+            if(choices.length >= 3){
+            choiceOrder.push(choices);
             }
         }
-        answerKey[IQ][1] = json.questions[json.questions.indexOf(answerKey[IQ][0])].right;
-    }
-    function updateQuestion(int){
+        for(var i in choiceOrder){
+            answerKey.push(choiceOrder[i].indexOf(4))
+            }
+        }
 
+        
+    function updateQuestion(int){
+        quizIterator += int;
+        if (quizIterator < 0){
+            /*show notification here*/
+            console.log("too small");
+        } else if ( quizIterator > quizOrder.length - 1){
+            /*show notification here */
+            console.log("too big");
+        }
+        else{
+            quiz.innerHTML = "<h1>" + json.questions[quizOrder[quizIterator]].question + "</h1><br>";
+            let questionCurrent = json.questions[quizIterator];
+            let choiceList = document.createElement("ul");
+            choiceList.setAttribute("id", "listOfChoices");
+            quiz.appendChild(choiceList);
+            for ( let i in choiceOrder[quizIterator]){
+                let node = document.createElement("li");
+                switch(choiceOrder[quizIterator][i]){
+                    case 1:
+                        node.innerHTML = questionCurrent.wrong[0]
+                        break;
+                    case 2:
+                        node.innerHTML = questionCurrent.wrong[1]
+                        break;
+                    case 3:
+                        node.innerHTML = questionCurrent.wrong[2]
+                        break;
+                    case 4:
+                        node.innerHTML = questionCurrent.right
+                        break;
+                    default:
+                        /*show notification*/
+                        console.log("oh dear " + i);
+            }
+            choiceList.appendChild(node);
+            }
+        }
     }
-    generateQuiz();
+
     /*function updateQuestion(int){
         var quiz = document.getElementById("quiz");
         quiz.innerHTML = "<h1>"+ json.questions[int].question + "</h1><br>";
@@ -213,8 +267,9 @@ computer, laptop, or tablet.</p>
             node.innerHTML = answerArray[i];
             AnswerList.appendChild(node);
         }
-    }
-    updateQuestion(0);*/
+    }*/
+    generateQuiz();
+    updateQuestion(quizIterator);
     /*temporary function to display all the questions*/
     /*commenting out because I no longer need this.*/
     /*function displayAllQuestions(){
