@@ -15,8 +15,9 @@
             <section id="QuizQuestions">
 
             </section>
-            <button onclick="updateQuestion(-1);">Previous Question</button>
-            <button onclick="updateQuestion(1);">Next Question</button>
+            <button id='btnPrevious' onclick="quizIteratorValidator(-1);">Previous Question</button>
+            <button id='btnSubmit' onclick="validateAndSubmit();">Submit</button>
+            <button id='btnNext' onclick="quizIteratorValidator(1);">Next Question</button>
         </section>
         <h3>SpanishClep.com</h3>
         <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com">spanishclep@gmail.com</a>
@@ -183,8 +184,10 @@ computer, laptop, or tablet.</p>
     var selectedAnswers=[];
     /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
     var quizLength = json.questions.length;
+    /*variable to control the displayed question*/
     var quizIterator = 0;
     function generateQuiz(){
+        
         while(answerKey.length){
             answerKey.pop();
         }
@@ -214,45 +217,85 @@ computer, laptop, or tablet.</p>
             answerKey.push(choiceOrder[i].indexOf(4))
             }
         }
-
-        
-    function updateQuestion(int){
+    function quizIteratorValidator(int){
         quizIterator += int;
         if (quizIterator < 0){
             /*show notification here*/
-            console.log("too small");
-        } else if ( quizIterator > quizOrder.length - 1){
+            document.getElementById("btnPrevious").style.visibility  = 'hidden';
+            //console.log("too small");
+            quizIterator = 0;
+        } else if ( quizIterator > quizOrder.length ){
+            document.getElementById("btnNext").style.visibility  = 'hidden';
+            document.getElementById("btnSubmit").style.visibility="visible";
             /*show notification here */
-            console.log("too big");
+            quizIterator = quizLength -1;
+        } else if (quizIterator == quizOrder.length - 1){
+            document.getElementById("btnNext").style.visibility  = 'hidden';
+            document.getElementById("btnSubmit").style.visibility="visible";
+            updateQuestion(quizIterator);
         }
-        else{
-            quiz.innerHTML = "<h1>" + json.questions[quizOrder[quizIterator]].question + "</h1><br>";
+        else {
+            document.getElementById("btnPrevious").style.visibility = "visible";
+            document.getElementById("btnNext").style.visibility = "visible";
+            document.getElementById("btnSubmit").style.visibility="hidden";
+            updateQuestion(quizIterator);
+        }
+    }
+        
+    function updateQuestion(int){
+            quiz.innerHTML = "<h1>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</h1><br>";
             let questionCurrent = json.questions[quizIterator];
-            let choiceList = document.createElement("ul");
+            let choiceList = document.createElement("form");
             choiceList.setAttribute("id", "listOfChoices");
+            choiceList.setAttribute("action","javascript:postAnswer(" + quizIterator +");")
             quiz.appendChild(choiceList);
             for ( let i in choiceOrder[quizIterator]){
-                let node = document.createElement("li");
-                switch(choiceOrder[quizIterator][i]){
+                let sectionNode = document.createElement("section");
+                sectionNode.setAttribute("class", "choiceSection")
+                let node = document.createElement("input");
+                node.setAttribute("type", "radio");
+                node.setAttribute("name", "Q" + quizIterator);
+                let labelNode = document.createElement("label");
+                switch(choiceOrder[quizIterator][i]){ 
                     case 1:
-                        node.innerHTML = questionCurrent.wrong[0]
+                        //node.setAttribute("type", "radio");
+                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
+                        node.setAttribute("value", 1);
+                        labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
+                        labelNode.innerHTML = questionCurrent.wrong[0];
                         break;
                     case 2:
-                        node.innerHTML = questionCurrent.wrong[1]
+                        //node.innerText = questionCurrent.wrong[1];
+                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
+                        node.setAttribute("value", 2);
+                        labelNode.setAttribute("for",quizIterator.toString() + choiceOrder[quizIterator][i]);
+                        labelNode.innerHTML = questionCurrent.wrong[1];
                         break;
                     case 3:
-                        node.innerHTML = questionCurrent.wrong[2]
+                        //node.innerText = questionCurrent.wrong[2];
+                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
+                        node.setAttribute("value", 3);
+                        labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
+                        labelNode.innerHTML = questionCurrent.wrong[2];
                         break;
                     case 4:
-                        node.innerHTML = questionCurrent.right
+                        //node.innerText = questionCurrent.right;
+                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
+                        node.setAttribute("value", 4);
+                        labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
+                        labelNode.innerHTML = questionCurrent.right;
                         break;
                     default:
                         /*show notification*/
                         console.log("oh dear " + i);
             }
-            choiceList.appendChild(node);
+            choiceList.appendChild(sectionNode);
+            sectionNode.appendChild(node);
+            sectionNode.appendChild(labelNode);
             }
         }
+    function validateAndSubmit(){
+
     }
 
     /*function updateQuestion(int){
@@ -269,7 +312,8 @@ computer, laptop, or tablet.</p>
         }
     }*/
     generateQuiz();
-    updateQuestion(quizIterator);
+    //updateQuestion(quizIterator);
+    quizIteratorValidator(quizIterator);
     /*temporary function to display all the questions*/
     /*commenting out because I no longer need this.*/
     /*function displayAllQuestions(){
