@@ -1,3 +1,11 @@
+label{
+      display:inline-block;
+    *display: inline;     /* for IE7*/
+    zoom:1;              /* for IE7*/
+    padding-top: 5px;
+    text-align: right;
+    width: 140px;
+}
 /* Larger than mobile */
 @media (min-width: 400px) {
     .book{
