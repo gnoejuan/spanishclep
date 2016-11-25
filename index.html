@@ -191,8 +191,11 @@ computer, laptop, or tablet.</p>
         while(answerKey.length){
             answerKey.pop();
         }
-        while(selectedAnswers.length){
-            selectedAnswers.pop();
+        /*reset selection. According to: https://jsperf.com/zeroarrayjs , this was the fastest way*/
+        let empty = 0;
+        let tempI = 0;
+        while(tempI < quizLength -1){
+            selectedAnswers[tempI++] = empty;
         }
         while(quizOrder.length < quizLength){
             let selectedQuestion = Math.floor(Math.random()*quizLength);
@@ -241,7 +244,9 @@ computer, laptop, or tablet.</p>
             updateQuestion(quizIterator);
         }
     }
-        
+function choseAnswer(int){
+    selectedAnswers[quizIterator] = int;
+}    
     function updateQuestion(int){
             quiz.innerHTML = "<h1>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</h1><br>";
             let questionCurrent = json.questions[quizIterator];
@@ -261,29 +266,37 @@ computer, laptop, or tablet.</p>
                         //node.setAttribute("type", "radio");
                         node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
                         node.setAttribute("value", 1);
+                        node.setAttribute("onClick","choseAnswer(1)");
                         labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
                         labelNode.innerHTML = questionCurrent.wrong[0];
+                        if (selectedAnswers[quizIterator] == 1){ node.checked = true;}
                         break;
                     case 2:
                         //node.innerText = questionCurrent.wrong[1];
                         node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
                         node.setAttribute("value", 2);
+                        node.setAttribute("onClick","choseAnswer(2)");
                         labelNode.setAttribute("for",quizIterator.toString() + choiceOrder[quizIterator][i]);
                         labelNode.innerHTML = questionCurrent.wrong[1];
+                        if (selectedAnswers[quizIterator] == 2){ node.checked = true;}
                         break;
                     case 3:
                         //node.innerText = questionCurrent.wrong[2];
                         node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
                         node.setAttribute("value", 3);
+                        node.setAttribute("onClick","choseAnswer(3)");
                         labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
                         labelNode.innerHTML = questionCurrent.wrong[2];
+                        if (selectedAnswers[quizIterator] == 3){ node.checked = true;}
                         break;
                     case 4:
                         //node.innerText = questionCurrent.right;
                         node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
                         node.setAttribute("value", 4);
+                        node.setAttribute("onClick","choseAnswer(4)");
                         labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
                         labelNode.innerHTML = questionCurrent.right;
+                        if (selectedAnswers[quizIterator] == 4){ node.checked = true;}
                         break;
                     default:
                         /*show notification*/
@@ -295,7 +308,13 @@ computer, laptop, or tablet.</p>
             }
         }
     function validateAndSubmit(){
-
+        if (selectedAnswers == -1){
+            /*show notification*/
+            console.log("quiz not complete");
+        } else{
+            let rightAnswers = selectedAnswers.reduce(function(n,val){ return n + (val === 4);},0);
+            console.log("you got a " + (rightAnswers/quizLength * 100));
+        }
     }
 
     /*function updateQuestion(int){
