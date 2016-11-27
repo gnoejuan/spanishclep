@@ -390,7 +390,7 @@
 .ns-effect-thumbslider .ns-thumb {
 	position: absolute;
 	z-index: 100;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	/*max-width:100%;*/
 	/*height:auto;*/
 }

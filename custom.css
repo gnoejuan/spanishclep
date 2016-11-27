@@ -9,6 +9,10 @@ label{
     border: 1px solid;
     border-radius: 5px;
 }
+.fa{
+position:relative;
+transform:translate(25%,25%)
+}
 #quizWrapper{
   background-color: antiquewhite;
   border: 2px dotted;
