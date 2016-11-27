@@ -1,10 +1,17 @@
 label{
-      display:inline-block;
+    display:inline-block;
     *display: inline;     /* for IE7*/
     zoom:1;              /* for IE7*/
     padding-top: 5px;
     text-align: right;
     width: 140px;
+    background-color: seashell;
+    border: 1px solid;
+    border-radius: 5px;
+}
+#quizWrapper{
+  background-color: antiquewhite;
+  border: 2px dotted;
 }
 /* Larger than mobile */
 @media (min-width: 400px) {
