@@ -2,12 +2,16 @@ label{
     display:inline-block;
     *display: inline;     /* for IE7*/
     zoom:1;              /* for IE7*/
-    padding-top: 5px;
-    text-align: right;
-    width: 140px;
+    padding: 5px;
+    text-align: left;
+    min-width: 140px;
     background-color: seashell;
     border: 1px solid;
     border-radius: 5px;
+}
+label input{
+float: left;
+margin-right:10px;
 }
 .fa{
 position:relative;
