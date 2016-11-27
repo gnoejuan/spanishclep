@@ -79,7 +79,6 @@ computer, laptop, or tablet.</p>
 <script src="./classie.js"></script>
 <script src="./notificationFx.js"></script>
 <script>
-    var iJson;
     var json = {"questions":[
     {
         //"question" : "1. ¿__________ es la capital de Texas?", "answer1" : "Qué", "answer2" : "Cuál","answer3" : "Quién", "answer4": "Que"
@@ -402,56 +401,9 @@ function choseAnswer(int){
             console.log("you got a " + (rightAnswers/quizLength * 100));
         }
     }
-
-    /*function updateQuestion(int){
-        var quiz = document.getElementById("quiz");
-        quiz.innerHTML = "<h1>"+ json.questions[int].question + "</h1><br>";
-        var AnswerList = document.createElement("ul");
-        AnswerList.setAttribute("id", "listOfAnswers");
-        quiz.appendChild(AnswerList);
-        for (var i in json.questions[int].wrong){
-            var answerArray = json.questions[int].wrong;
-            var node = document.createElement("li");
-            node.innerHTML = answerArray[i];
-            AnswerList.appendChild(node);
-        }
-    }*/
     generateQuiz();
     //updateQuestion(quizIterator);
     quizIteratorValidator(0);
-    /*temporary function to display all the questions*/
-    /*commenting out because I no longer need this.*/
-    /*function displayAllQuestions(){
-        var quiz = document.getElementById("quiz");
-        /*Let q stand for the question*/
-        /*var qList = document.createElement("ol");
-        qList.setAttribute("id","questionList");
-        quiz.appendChild(qList);
-        var qName = 1;*/
-        /*this outer loop will print all the questions*/
-/*        for (var q in json.questions){
-            var qNode = document.createElement("li");
-            qNode.setAttribute("id","q" + qName.toString());
-            qNode.innerHTML = json.questions[q].question;
-            qList.appendChild(qNode);*/
-            /*following the advice here http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list, the questions will be
-            wrapped with a li element. In case the link 404s, the code is added to the bottom of the file*/
-           /*let w stand for wrapper*/
-/*            var wNode = document.createElement("ol");
-            wNode.setAttribute("id","w" + qName.toString());
-            qNode.appendChild(wNode);*/
-            /* let a stand for answer */
-/*            for (a in json.questions[q].wrong){
-                var aNode = document.createElement("li");
-                aNode.style.listStyle = "lower-alpha";
-                aNode.setAttribute("id", "q" + qName.toString() + "a" + (parseInt(a) + 1).toString());
-                aNode.innerHTML = json.questions[q].wrong[a];
-                wNode.appendChild(aNode);
-            }
-            qName++;
-        }
-    }
-displayAllQuestions();*/
 /*note to self
 --in regards to the question list:
 <ul>
