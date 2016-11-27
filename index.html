@@ -10,36 +10,34 @@
         <!-- http://www.seriouspizza.com/ -->
         <script src="./modernizr.custom.js"></script>
         <link rel="stylesheet" type="text/css" href="./ns-default.css"/>
-        <link rel="stylesheet" type="text/css" href="./custom.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="./ns-style-other.css" />
+        <link rel="stylesheet" type="text/css" href="./custom.css" media="screen" />
         <script src="https://use.fontawesome.com/7592d3539c.js"></script>
     </head>
     <body>
-        <section id="quizWrapper">
-            <div class="container">
-            <section id="QuizQuestions">
-
-            </section>
-            <button id='btnPrevious' onclick="quizIteratorValidator(-1);">Previous Question</button>
-            <button id='btnSubmit' onclick="validateAndSubmit();" class="button-primary">Submit</button>
-            <button id='btnNext' onclick="quizIteratorValidator(1);">Next Question</button>
-            </div>
-        </section>
-        <h3>SpanishClep.com</h3>
-        <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com">spanishclep@gmail.com</a>
-        <a href="tel://1-512-626-4397">+1 (512) 626-4397</a>
-        <ul class="sidebar">
-            <li><strong>Material:</strong></li>
-            <li>Ser vs. Estar</li>
-            <li>Preterite vs. Imperfect</li>
-            <li>Subjunctive vs. Indicative</li>
-            <li>Total Verbs</li>
-            <li>Other grammar topics</li>
-            <li>Vocabulary I</li>
-            <li>Vocabulary II</li>
-            <li>Lectura I</li>
-            <li>Lectura II</li>
+        <div class="container">
+        <h1>SpanishClep.com</h1>
+        </div>
+<div class="container">
+            <div class="row">
+            <ul class="sidebar four columns">
+        <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com"><i class="fa fa-envelope-o" style="margin-right:10px;"aria-hidden="true"></i>spanishclep@gmail.com</a><br>
+        <a href="tel://1-512-626-4397"><i style="margin-right:10px;"class="fa fa-volume-control-phone" aria-hidden="true"></i>+1 (512) 626-4397</a>
+            <li><strong>Material:</strong>
+                <ul>
+                    <li>Ser vs. Estar</li>
+                    <li>Preterite vs. Imperfect</li>
+                    <li>Subjunctive vs. Indicative</li>
+                    <li>Total Verbs</li>
+                    <li>Other grammar topics</li>
+                    <li>Vocabulary I</li>
+                    <li>Vocabulary II</li>
+                    <li>Lectura I</li>
+                    <li>Lectura II</li> 
+                </ul>
+            </li>
         </ul>
+<div class="sidebar eight columns">
         <h3>What can you expect from our material?</h3>
         <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being
 
@@ -59,7 +57,19 @@ credits.</p>
 <li><em>Less than 70%:</em> you should get more training.</li>
 
 </ul>
-<h3>PROCESS:</h3>
+<button onclick="toggleQuiz();" class="button-primary"><i class="fa fa-check-square" aria-hidden="true"></i>Practice Quiz</button>
+</div>
+</div>
+<section style="display:none;" id="quizWrapper">
+            <div class="container">
+            <section id="QuizQuestions">
+            </section>
+            <button id='btnPrevious' style="visibility:hidden;" onclick="quizIteratorValidator(-1);">Previous Question</button>
+            <button id='btnSubmit'  style="visibility:hidden;" onclick="validateAndSubmit();" class="button-primary">Submit</button>
+            <button id='btnNext' style="visibility:hidden;" onclick="quizIteratorValidator(1);">Next Question</button>
+            </div>
+</section>
+<h5>PROCESS:</h5>
 <ul class="process">
 <li> Purchase the material</li>
 
@@ -76,9 +86,11 @@ can be sent to you immediately</li>
 <p>NOTE: You can work on the material by using your smart phone, iPad,
 
 computer, laptop, or tablet.</p>
+</div>
 <script src="./classie.js"></script>
 <script src="./notificationFx.js"></script>
 <script>
+    var firstTime = 0;
     var json = {"questions":[
     {
         //"question" : "1. ¿__________ es la capital de Texas?", "answer1" : "Qué", "answer2" : "Cuál","answer3" : "Quién", "answer4": "Que"
@@ -236,6 +248,7 @@ computer, laptop, or tablet.</p>
             document.getElementById("btnNext").style.visibility  = 'hidden';
             document.getElementById("btnSubmit").style.visibility="visible";
             quizIterator = quizLength -1;
+            updateQuestion(quizIterator);
         } else if (quizIterator == quizOrder.length - 1){
             document.getElementById("btnNext").style.visibility  = 'hidden';
             document.getElementById("btnSubmit").style.visibility="visible";
@@ -250,10 +263,19 @@ computer, laptop, or tablet.</p>
     }
 function choseAnswer(int){
     selectedAnswers[quizIterator] = int;
-}    
+}
+    function toggleQuiz(){
+        let varQuizWrapper = document.getElementById("quizWrapper");
+    	varQuizWrapper.style.display = (varQuizWrapper.style.display != 'none' ? 'none' : '' );
+        if (firstTime == 0){
+            firstTime = 1;
+            generateQuiz();
+            quizIteratorValidator(quizIterator);
+        }
+	}   
     function updateQuestion(int){
-            quiz.innerHTML = "<strong>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</strong>></br>";
-            let questionCurrent = json.questions[quizIterator];
+            quiz.innerHTML = "<strong>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</strong></br>";
+            let questionCurrent = json.questions[quizOrder[quizIterator]];
             let choiceList = document.createElement("form");
             choiceList.setAttribute("id", "listOfChoices");
             /*choiceList.setAttribute("action","javascript:postAnswer(" + quizIterator +");")*/
@@ -372,14 +394,15 @@ function choseAnswer(int){
             }*/
         }
     function validateAndSubmit(){
+        /*<img class="u-max-full-width" src="./!.png">*/
         if (selectedAnswers.includes(0)){
             let notification = new NotificationFx({
                     wrapper : document.body,
-                    message : '<div class="ns-thumb"><img class="u-max-full-width" src="./!.png"></div><div class="ns-content"><p>Not all questions are answered</p></div>',
+                    message : '<div onclick="quizIteratorValidator(-' + (quizIterator - selectedAnswers.indexOf(0)) + ')" class="ns-thumb"><i style ="color:palevioletred;" class="fa fa-arrow-circle-o-down fa-3x" aria-hidden="true"></i></div><div class="ns-content"><p>Click here to go to the first missed question</p></div>',
                     layout : 'other',
                     effect: 'thumbslider',
                     type: 'error',
-                    ttl: 6000,
+                    ttl: 10000,
                     onClose: function() {return false;},
                     onOpen: function() {return false;}
                 });

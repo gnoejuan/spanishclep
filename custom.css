@@ -13,68 +13,48 @@ label input{
 float: left;
 margin-right:10px;
 }
-.fa{
+/*.ns-type-error .ns-box-inner .ns-content{
+
+}*/
+.ns-box-inner .ns-content{
+  background: chartreuse;
+}
+.fa-arrow-circle-o-down{
+position:relative;
+transform:translate(25%,25%)
+}
+.fa-hand-o-right{
 position:relative;
 transform:translate(25%,25%)
 }
 #quizWrapper{
   background-color: antiquewhite;
   border: 2px dotted;
+  padding-top: 10px;
 }
 /* Larger than mobile */
 @media (min-width: 400px) {
-    .book{
-        max-height: 100px;
-        max-width: 200px;
-    }
-    .description{
 
-    }
 }   
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-    .book{
-        max-height: 250px;
-        max-width: 200px;
-    }
-    .description{
 
-    }
 }
     
 /* Larger than tablet */
 @media (min-width: 750px) {
-    .book{
-        max-height: 300px;
-        max-width: 200px;
-    }
-    .description{
 
-    }
-    
 }
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
-    .book{
-        max-height: 400px;
-        max-width: 200px;
-    }
-    .description{
 
-    }
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
-    .book{
-        max-height: 450px;
-        max-width: 200px;
-    }
-    .description{
-        
-    }
+
 }
 .fixed-nav-bar {
   position: fixed;
