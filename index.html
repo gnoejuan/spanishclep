@@ -419,17 +419,6 @@ function choseAnswer(int){
     generateQuiz();
     //updateQuestion(quizIterator);
     quizIteratorValidator(0);
-                let notification = new NotificationFx({
-                    wrapper : document.body,
-                    message : '<div class="ns-thumb"><i style ="color:#33C3F0;" class="fa fa-hand-o-right fa-3x" aria-hidden="true"></i></div><div class="ns-content"><p>you got a 0% grade</p></div>',
-                    layout : 'other',
-                    effect: 'thumbslider',
-                    type: 'error',
-                    ttl: 9000,
-                    onClose: function() {return false;},
-                    onOpen: function() {return false;}
-                });
-            notification.show();
     /*temporary function to display all the questions*/
     /*commenting out because I no longer need this.*/
     /*function displayAllQuestions(){
