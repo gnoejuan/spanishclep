@@ -4,13 +4,13 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <!--<link rel="stylesheet" type="text/css" href="normalize.css" media="screen" />-->
         <!--http://getskeleton.com/ -->
-        <link rel="stylesheet" type="text/css" href="skeleton.css" media="screen" />
         <!--http://sixrevisions.com/css/fixed-navigation-bar/ -->
         <!-- for navbar on bottom use z-index: 9999; -->
         <!-- http://www.seriouspizza.com/ -->
         <script src="./modernizr.custom.js"></script>
         <link rel="stylesheet" type="text/css" href="./ns-default.css"/>
         <link rel="stylesheet" type="text/css" href="./ns-style-other.css" />
+        <link rel="stylesheet" type="text/css" href="./skeleton.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="./custom.css" media="screen" />
         <script src="https://use.fontawesome.com/7592d3539c.js"></script>
     </head>
@@ -19,10 +19,10 @@
         <h1>SpanishClep.com</h1>
         </div>
 <div class="container">
-            <div class="row">
-            <ul class="sidebar four columns">
-        <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com"><i class="fa fa-envelope-o" style="margin-right:10px;"aria-hidden="true"></i>spanishclep@gmail.com</a><br>
-        <a href="tel://1-512-626-4397"><i style="margin-right:10px;"class="fa fa-volume-control-phone" aria-hidden="true"></i>+1 (512) 626-4397</a>
+    <div class="row">
+        <ul class="sidebar four columns">
+            <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com"><i class="fa fa-envelope-o" style="margin-right:10px;"aria-hidden="true"></i>spanishclep@gmail.com</a><br>
+            <a href="tel://1-512-626-4397"><i style="margin-right:10px;"class="fa fa-volume-control-phone" aria-hidden="true"></i>+1 (512) 626-4397</a>
             <li><strong>Material:</strong>
                 <ul>
                     <li>Ser vs. Estar</li>
@@ -37,51 +37,33 @@
                 </ul>
             </li>
         </ul>
-<div class="sidebar eight columns">
+    <div class="sidebar eight columns">
         <h3>What can you expect from our material?</h3>
-        <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being
-
-prepared for the exam? By completing our guide you will be able to test yourself. Our
-
-grading system has been tested with hundreds of students and we predict the following:
-
-90% and above: you are in very good shape. You will probably get the maximum
-
-credits.</p>
-<ul class="expectations">
-
-<li><em>80%-90%:</em> you will probably get around 10 credits.</li>
-
-<li><em>70% - 80%:</em> you are going to get the minimum credits.</li>
-
-<li><em>Less than 70%:</em> you should get more training.</li>
-
-</ul>
-<button onclick="toggleQuiz();" class="button-primary"><i class="fa fa-check-square" aria-hidden="true"></i>Practice Quiz</button>
-</div>
+        <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being prepared for the exam? By completing our guide you will be able to test yourself. Our grading system has been tested with hundreds of students and we predict the following: 90% and above: you are in very good shape. You will probably get the maximum credits.</p>
+        <ul class="expectations">
+            <li><em>80%-90%:</em> you will probably get around 10 credits.</li>
+            <li><em>70% - 80%:</em> you are going to get the minimum credits.</li>
+            <li><em>Less than 70%:</em> you should get more training.</li>
+        </ul>
+        <button onclick="toggleQuiz();" class="button-primary"><i class="fa fa-check-square" aria-hidden="true"></i>Practice Quiz</button>
+    </div>
 </div>
 <section style="display:none;" id="quizWrapper">
-            <div class="container">
-            <section id="QuizQuestions">
-            </section>
-            <button id='btnPrevious' style="visibility:hidden;" onclick="quizIteratorValidator(-1);">Previous Question</button>
-            <button id='btnSubmit'  style="visibility:hidden;" onclick="validateAndSubmit();" class="button-primary">Submit</button>
-            <button id='btnNext' style="visibility:hidden;" onclick="quizIteratorValidator(1);">Next Question</button>
-            </div>
+    <div class="container">
+        <section id="QuizQuestions">
+        </section>
+        <button id='btnPrevious' style="visibility:hidden;" onclick="quizIteratorValidator(-1);">Previous Question</button>
+        <button id='btnSubmit'  style="visibility:hidden;" onclick="validateAndSubmit();" class="button-primary">Submit</button>
+        <button id='btnNext' style="visibility:hidden;" onclick="quizIteratorValidator(1);">Next Question</button>
+    </div>
 </section>
 <h5>PROCESS:</h5>
 <ul class="process">
-<li> Purchase the material</li>
-
-<li> Provide your email so that we can send you the material</li>
-
-<li> The material will be sent within 24 hours</li>
-
-<li> Open the file and write your email (first question) so that the results
-
-can be sent to you immediately</li>
-
-<li>Check your email to view your grades</li>
+    <li> Purchase the material</li>
+    <li> Provide your email so that we can send you the material</li>
+    <li> The material will be sent within 24 hours</li>
+    <li> Open the file and write your email (first question) so that the results can be sent to you immediately</li>
+    <li>Check your email to view your grades</li>
 </ul>
 <p>NOTE: You can work on the material by using your smart phone, iPad,
 
@@ -196,21 +178,26 @@ computer, laptop, or tablet.</p>
     };
     /*the quiz section*/
     var quiz = document.getElementById("QuizQuestions");
-    /*create answer key */
+    /*Used to hold a random order for the quiz */
     var quizOrder = [];
+    /*Used to hold a random order of choices for each question*/
     var choiceOrder = [];
+    /*shouldn't need this because the correct answer value should be 4*/
     var answerKey=[];
+    /*used to hold answers selected by the user. Should be zero'd out on each try*/
     var selectedAnswers=[];
     /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
     var quizLength = json.questions.length;
     /*variable to control the displayed question*/
     var quizIterator = 0;
+    /*flushthe current quiz*/
     function generateQuiz(){
         
         while(answerKey.length){
             answerKey.pop();
         }
-        /*reset selection. According to: https://jsperf.com/zeroarrayjs , this was the fastest way*/
+        /*reset selection. According to: https://jsperf.com/zeroarrayjs , this was the fastest way to zero out an array*/
+        /*in case a future developer wants to change the value of a zero'd out array*/
         let empty = 0;
         let tempI = 0;
         while(tempI < quizLength){
@@ -221,9 +208,11 @@ computer, laptop, or tablet.</p>
             if(quizOrder.indexOf(selectedQuestion) > -1) continue;
             quizOrder[quizOrder.length] = selectedQuestion
         }
+        /*This was the quickest way according to jspref. I, unfortunately, forgot to get the link. */
+        /*while the array holding the random choices is shorter than the array holding the random order for the quiz, make random choices*/
         while(choiceOrder.length < quizOrder.length){
             let choices = [1,2,3,4];
-            let tempArray = [];
+            /*let tempArray = [];*/
             for (let i = choices.length - 1; i > 0; i--){
                 var j = Math.floor(Math.random() * (i + 1));
                 var temp = choices[i];
@@ -239,6 +228,7 @@ computer, laptop, or tablet.</p>
             answerKey.push(choiceOrder[i].indexOf(4))
             }
         }
+    /*makes sure the number used to navigate through the quiz isn't less than or greater than the number of questions available. Also makes sure the appropriate buttons are visible*/
     function quizIteratorValidator(int){
         quizIterator += int;
         if (quizIterator < 0){
@@ -261,26 +251,35 @@ computer, laptop, or tablet.</p>
             updateQuestion(quizIterator);
         }
     }
+/*submits the user's choice to the selectedAnswers array*/
 function choseAnswer(int){
     selectedAnswers[quizIterator] = int;
 }
+/*toggles the quiz's visibility*/
     function toggleQuiz(){
         let varQuizWrapper = document.getElementById("quizWrapper");
+        /*ternary assignment <3*/
     	varQuizWrapper.style.display = (varQuizWrapper.style.display != 'none' ? 'none' : '' );
         if (firstTime == 0){
             firstTime = 1;
             generateQuiz();
             quizIteratorValidator(quizIterator);
         }
-	}   
+	}
+    /*Updates the question visibile on the website. Uses questionIterator to navigate through the quiz.*/   
     function updateQuestion(int){
+        /* "(quizIterator + 1).toString()" takes the quizIterator ( a zero based number) and adds one*/
             quiz.innerHTML = "<strong>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</strong></br>";
+            /*json.questions[quizOrder[quizIterator]] => json.questions because that's the string values for the quiz, and we use quizIterator as the nTh place of the quiz order.*/
             let questionCurrent = json.questions[quizOrder[quizIterator]];
+            /*making the multiple choice selections*/
             let choiceList = document.createElement("form");
             choiceList.setAttribute("id", "listOfChoices");
             /*choiceList.setAttribute("action","javascript:postAnswer(" + quizIterator +");")*/
             quiz.appendChild(choiceList);
+            /*for each choice in a set of choices in the choiceOrder array*/
             for (let i in choiceOrder[quizIterator]){
+                /*skeletonRow is used fit within the boilerplate of skeleton.css*/
                 let skeletonRow = document.createElement("div");
                 skeletonRow.setAttribute("class", "row u-full-width");
                 let labelNode = document.createElement("label");
@@ -312,6 +311,7 @@ function choseAnswer(int){
                         if (selectedAnswers[quizIterator] == 4){ node.checked = true;}
                         labelNode.innerText = questionCurrent.right;
                         break;
+                    /*error*/
                     default:
                         let notification = new NotificationFx({
                             wrapper : document.body,
@@ -330,68 +330,6 @@ function choseAnswer(int){
                 skeletonRow.appendChild(labelNode);
                 labelNode.appendChild(node);
             }
-            /*for ( let i in choiceOrder[quizIterator]){
-                let sectionNode = document.createElement("section");
-                sectionNode.setAttribute("class", "choiceSection")
-                let node = document.createElement("input");
-                node.setAttribute("type", "radio");
-                node.setAttribute("name", "Q" + quizIterator);
-                let labelNode = document.createElement("label");
-                switch(choiceOrder[quizIterator][i]){ 
-                    case 1:
-                        //node.setAttribute("type", "radio");
-                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
-                        node.setAttribute("value", 1);
-                        node.setAttribute("onClick","choseAnswer(1)");
-                        labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
-                        labelNode.innerHTML = questionCurrent.wrong[0];
-                        if (selectedAnswers[quizIterator] == 1){ node.checked = true;}
-                        break;
-                    case 2:
-                        //node.innerText = questionCurrent.wrong[1];
-                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
-                        node.setAttribute("value", 2);
-                        node.setAttribute("onClick","choseAnswer(2)");
-                        labelNode.setAttribute("for",quizIterator.toString() + choiceOrder[quizIterator][i]);
-                        labelNode.innerHTML = questionCurrent.wrong[1];
-                        if (selectedAnswers[quizIterator] == 2){ node.checked = true;}
-                        break;
-                    case 3:
-                        //node.innerText = questionCurrent.wrong[2];
-                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
-                        node.setAttribute("value", 3);
-                        node.setAttribute("onClick","choseAnswer(3)");
-                        labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
-                        labelNode.innerHTML = questionCurrent.wrong[2];
-                        if (selectedAnswers[quizIterator] == 3){ node.checked = true;}
-                        break;
-                    case 4:
-                        //node.innerText = questionCurrent.right;
-                        node.setAttribute("id", quizIterator.toString() + choiceOrder[quizIterator][i]);
-                        node.setAttribute("value", 4);
-                        node.setAttribute("onClick","choseAnswer(4)");
-                        labelNode.setAttribute("for",choiceOrder[quizIterator][i]);
-                        labelNode.innerHTML = questionCurrent.right;
-                        if (selectedAnswers[quizIterator] == 4){ node.checked = true;}
-                        break;
-                    default:
-                        let notification = new NotificationFx({
-                            wrapper : document.body,
-                            message : '<div class="ns-thumb"><img src="http://placehold.it/62"></div><div class="ns-content"><p>oh dear</p></div>',
-                            layout : 'other',
-                            effect: 'thumbslider',
-                            type: 'error',
-                            ttl: 500,
-                            onClose: function() {return false;},
-                            onOpen: function() {return false;}
-                        });
-                        notification.show();
-                        console.log("oh dear " + i);
-            }
-            choiceList.appendChild(sectionNode);
-            sectionNode.appendChild(node);
-            sectionNode.appendChild(labelNode);
-            }*/
         }
     function validateAndSubmit(){
         /*<img class="u-max-full-width" src="./!.png">*/
@@ -407,7 +345,7 @@ function choseAnswer(int){
                     onOpen: function() {return false;}
                 });
             notification.show();
-            console.log("quiz not complete");
+            /*console.log("quiz not complete");*/
         } else{
             let rightAnswers = selectedAnswers.reduce(function(n,val){ return n + (val === 4);},0);
             let notification = new NotificationFx({
