@@ -1,274 +1,277 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <!--<link rel="stylesheet" type="text/css" href="normalize.css" media="screen" />-->
-        <!--http://getskeleton.com/ -->
-        <!--http://sixrevisions.com/css/fixed-navigation-bar/ -->
-        <!-- for navbar on bottom use z-index: 9999; -->
-        <!-- http://www.seriouspizza.com/ -->
-        <script src="./js/modernizr.custom.js"></script>
-        <link rel="stylesheet" type="text/css" href="./css/ns-default.css"/>
-        <link rel="stylesheet" type="text/css" href="./css/ns-style-other.css" />
-        <link rel="stylesheet" type="text/css" href="./css/skeleton.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="./css/custom.css" media="screen" />
-        <script src="https://use.fontawesome.com/7592d3539c.js"></script>
-    </head>
-    <body>
-        <div class="container">
-        <h1>SpanishClep.com</h1>
-        </div>
-<div class="container">
-    <div class="row">
-        <ul class="sidebar four columns">
-            <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com"><i class="fa fa-envelope-o" style="margin-right:10px;"aria-hidden="true"></i>spanishclep@gmail.com</a><br>
-            <a href="tel://1-512-626-4397"><i style="margin-right:10px;"class="fa fa-volume-control-phone" aria-hidden="true"></i>+1 (512) 626-4397</a>
-            <li><strong>Material:</strong>
-                <ul>
-                    <li>Ser vs. Estar</li>
-                    <li>Preterite vs. Imperfect</li>
-                    <li>Subjunctive vs. Indicative</li>
-                    <li>Total Verbs</li>
-                    <li>Other grammar topics</li>
-                    <li>Vocabulary I</li>
-                    <li>Vocabulary II</li>
-                    <li>Lectura I</li>
-                    <li>Lectura II</li> 
-                </ul>
-            </li>
-        </ul>
-    <div class="sidebar eight columns">
-        <h3>What can you expect from our material?</h3>
-        <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being prepared for the exam? By completing our guide you will be able to test yourself. Our grading system has been tested with hundreds of students and we predict the following: 90% and above: you are in very good shape. You will probably get the maximum credits.</p>
-        <ul class="expectations">
-            <li><em>80%-90%:</em> you will probably get around 10 credits.</li>
-            <li><em>70% - 80%:</em> you are going to get the minimum credits.</li>
-            <li><em>Less than 70%:</em> you should get more training.</li>
-        </ul>
-        <button onclick="toggleQuiz();" class="button-primary"><i class="fa fa-check-square" aria-hidden="true"></i>Practice Quiz</button>
-    </div>
-</div>
-<section style="display:none;" id="quizWrapper">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css" media="screen" />
+    <!--http://getskeleton.com/ -->
+    <!--http://sixrevisions.com/css/fixed-navigation-bar/ -->
+    <!-- for navbar on bottom use z-index: 9999; -->
+    <!-- http://www.seriouspizza.com/ -->
+    <script src="./js/modernizr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/ns-default.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/ns-style-other.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/custom.css" media="screen" />
+    <script src="https://use.fontawesome.com/7592d3539c.js"></script>
+</head>
+<body>
     <div class="container">
-        <section id="QuizQuestions">
+        <h1>SpanishClep.com</h1>
+        <div class="row">
+            <ul class="four columns">
+                <a href="mailto:spanishclep@gmail.com?subject=Test%20Email&body=This%20is%20an%20email%20that%20had%20the%20subject,%20message,%20and%20bcc%20filled%20in%20automatically%20by%20clicking%20the%20email%20on%20the%20website&bcc=provenhypothesis@gmail.com"><i class="fa fa-envelope-o" style="margin-right:10px;" aria-hidden="true"></i>spanishclep@gmail.com</a>
+                <br>
+                <a href="tel://1-512-626-4397"><i style="margin-right:10px;" class="fa fa-volume-control-phone" aria-hidden="true"></i>+1 (512) 626-4397</a>
+                <li>
+                    <strong>Material:</strong>
+                    <ul>
+                        <li>Ser vs. Estar</li>
+                        <li>Preterite vs. Imperfect</li>
+                        <li>Subjunctive vs. Indicative</li>
+                        <li>Total Verbs</li>
+                        <li>Other grammar topics</li>
+                        <li>Vocabulary I</li>
+                        <li>Vocabulary II</li>
+                        <li>Lectura I</li>
+                        <li>Lectura II</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="eight columns">
+                <h3>What can you expect from our material?</h3>
+                <p> Do you want to take the Spanish Clep Exam? Do you have doubts about being prepared for the exam? By completing our guide you will be able to test yourself. Our grading system has been tested with hundreds of students and we predict the following: 90% and above: you are in very good shape. You will probably get the maximum credits.</p>
+                <ul class="expectations">
+                    <li><em>80%-90%:</em> you will probably get around 10 credits.</li>
+                    <li><em>70% - 80%:</em> you are going to get the minimum credits.</li>
+                    <li><em>Less than 70%:</em> you should get more training.</li>
+                </ul>
+                <button onclick="toggleQuiz();" class="button-primary"><i class="fa fa-check-square" aria-hidden="true"></i>Practice Quiz</button>
+            </div>
+        </div>
+        <section style="display:none;" id="quizWrapper">
+            <div class="container">
+                <section id="QuizQuestions"></section>
+                <button id='btnPrevious' style="visibility:hidden;" onclick="quizIteratorValidator(-1);">Previous Question</button>
+                <button id='btnSubmit' style="visibility:hidden;" onclick="validateAndSubmit();" class="button-primary">Submit</button>
+                <button id='btnNext' style="visibility:hidden;" onclick="quizIteratorValidator(1);">Next Question</button>
+            </div>
         </section>
-        <button id='btnPrevious' style="visibility:hidden;" onclick="quizIteratorValidator(-1);">Previous Question</button>
-        <button id='btnSubmit'  style="visibility:hidden;" onclick="validateAndSubmit();" class="button-primary">Submit</button>
-        <button id='btnNext' style="visibility:hidden;" onclick="quizIteratorValidator(1);">Next Question</button>
-    </div>
-</section>
-<h5>PROCESS:</h5>
-<ul class="process">
-    <li> Purchase the material</li>
-    <li> Provide your email so that we can send you the material</li>
-    <li> The material will be sent within 24 hours</li>
-    <li> Open the file and write your email (first question) so that the results can be sent to you immediately</li>
-    <li>Check your email to view your grades</li>
-</ul>
-<p>NOTE: You can work on the material by using your smart phone, iPad,
+        <h5>PROCESS:</h5>
+        <ul class="process">
+            <li> Purchase the material</li>
+            <li> Provide your email so that we can send you the material</li>
+            <li> The material will be sent within 24 hours</li>
+            <li> Open the file and write your email (first question) so that the results can be sent to you immediately</li>
+            <li>Check your email to view your grades</li>
+        </ul>
+        <p>
+            NOTE: You can work on the material by using your smart phone, iPad,
 
-computer, laptop, or tablet.</p>
-</div>
-<script src="./js/classie.js"></script>
-<script src="./js/notificationFx.js"></script>
-<script>
-    var firstTime = 0;
-    var json = {"questions":[
-    {
-        //"question" : "1. ¿__________ es la capital de Texas?", "answer1" : "Qué", "answer2" : "Cuál","answer3" : "Quién", "answer4": "Que"
-        "question" : "¿__________ es la capital de Texas?", "wrong" : ["Quién","Que","Qué"], "right":"Cuál" 
-    },
-    {
-        //"question" : "2. ____________ (my) libro está sobre la mesa. Tu libro está debajo de la mesa.", "answer1" : "tu", "answer2" : "tú","answer3" : "mi", "answer4": "sus"
-        "question" : "____________ (my) libro está sobre la mesa. Tu libro está debajo de la mesa.", "wrong" : ["tu" ,"tú", "sus"], "right" : "mi"
-    },
-    {
-        //"question" :"3. Nueva York es una ciudad ______________.", "answer1" : "norteamericanos", "answer2" : "norteamericano","answer3" : "norteamericana", "answer4": "norteamericanas"
-        "question" :"Nueva York es una ciudad ______________.", "wrong" : [ "norteamericanos", "norteamericano","norteamericanas"], "right" : "norteamericana"
-    },
-    {
-        //"question" :"4. Los estudiantes _______________  en la biblioteca.", "answer1" : "estudian", "answer2" : "estudien","answer3" : "estudiando", "answer4": "estudio"
-        "question" :"Los estudiantes _______________  en la biblioteca.", "wrong": ["estudien","estudiando","estudio"], "right" : "estudian"
-    },
-    {
-        //"question" : "5. ____________ (this) libro es de mi sobrino.", "answer1" : "Ese", "answer2" : "Estos","answer3" : "Estas", "answer4": "Este"
-        "question" : " ____________ (this) libro es de mi sobrino.", "wrong": ["Ese", "Estos","Estas"], "right" : "Este"
-    },
-    {
-        //"question" : "6. Los profesores ________________ tomar vacaciones durante el verano.", "answer1" : "quiere", "answer2" : "quiero","answer3" : "quieren", "answer4": "quieres"
-        "question" : "Los profesores ________________ tomar vacaciones durante el verano.","wrong": ["quiere","quiero","quieres"], "right" : "quieren"
-    },
-    {
-        //"question" : "7. Este fin de semana nosotros ____________ a Houston.", "answer1" : "voy a ir", "answer2" : "vamos a irnos","answer3" : "vamos a ir", "answer4": "van a ir"
-        "question" : "Este fin de semana nosotros ____________ a Houston.","wrong": ["voy a ir","vamos a irnos","van a ir"], "right" : "vamos a ir"
-    },
-    {
-        //"question" : "8. Mis hermanos ______________ todos los días antes de ir a la escuela.", "answer1" : "se bañan", "answer2" : "nos bañamos","answer3" : "bañan", "answer4": "bañamos"
-        "question" : "Mis hermanos ______________ todos los días antes de ir a la escuela.", "wrong": ["nos bañamos", "bañan","bañamos"], "right" : "se bañan"
-    },
-    {
-        //"question" : "9. Mi hermano _________________ una persona agradable. Pero hoy está enojado.", "answer1" : "es", "answer2" : "está","answer3" : "soy", "answer4": "estoy"
-        "question" : "Mi hermano _________________ una persona agradable. Pero hoy está enojado.", "wrong": [ "está", "soy","estoy"], "right" : "es"
-    },
-    {
-        //"question" : "10. El partido de béisbol es en Dallas.  Dallas _________ en Texas.", "answer1" : "es", "answer2" : "está","answer3" : "soy", "answer4": "estoy"
-        "question" : "El partido de béisbol es en Dallas.  Dallas _________ en Texas.","wrong": ["es","soy","estoy"], "right" : "está"
-    },
-    {
-        //"question" : "11. El verano en Texas es ___________________ en Nueva York.", "answer1" : "menos caliente", "answer2" : "más caliente que","answer3" : "tan caliente", "answer4": "tanto caliente"
-        "question" : "El verano en Texas es ___________________ en Nueva York.","wrong": ["menos caliente","tan caliente", "tanto caliente"], "right" : "más caliente que"
-    },
-    {
-        //"question" : "12. Jupiter _______ el planeta __________ grande de nuestro sistema solar.", "answer1" : "es, más", "answer2" : "es, tanto","answer3" : "es, tan", "answer4": "es, tanto"
-        "question" : "Jupiter _______ el planeta __________ grande de nuestro sistema solar.","wrong": ["es, tanto","es, tan","es, tanto"], "right" : "es, más"
-    },
-    {
-        //"question" : "13. Quiero comprar flores para mi madre.  Quiero ______________.", "answer1" : "comprárselas", "answer2" : "compráselos","answer3" : "se los comprar", "answer4": "se los compro"
-        "question" : "Quiero comprar flores para mi madre.  Quiero ______________.","wrong": ["compráselos","se los comprar", "se los compro"], "right" : "comprárselas"
-    },
-    {
-        //"question" : "14. A Rolando ______  __________ nadar en el mar.", "answer1" : "se, gusta", "answer2" : "le, gustan","answer3" : "le, gusta", "answer4": "le, gustar"
-        "question" : "A Rolando ______  __________ nadar en el mar.","wrong": ["se, gusta","le, gustan","le, gustar"], "right" : "le, gusta"
-    },
-    {
-        //"question" : "15. Anoche yo __________(ir) de compras porque necesitaba comprar un par de zapatos.", "answer1" : "fui", "answer2" : "fue","answer3" : "iré", "answer4": "voy"
-        "question" : "Anoche yo __________(ir) de compras porque necesitaba comprar un par de zapatos.","wrong": ["fue","iré","voy"], "right" : "fui"
-    },
-    {
-        //"question" : "16. Quiero que Ud _________el periódico.", "answer1" : "lea", "answer2" : "lees","answer3" : "leo", "answer4": "leí"
-        "question" : "Quiero que Ud _________el periódico.","wrong": ["lees","leo","leí"], "right" : "lea"
-    },
-    {
-        //"question" : "17. Busco un restaurante que ________________ comida china.", "answer1" : "sirva", "answer2" : "sirve","answer3" : "sirvió", "answer4": "servía"
-        "question" : "Busco un restaurante que ________________ comida china.","wrong": ["sirve","sirvió","servía"], "right" : "sirva"
-    },
-    {
-        //"question" : "18. A nosotros nos molesta que Sofía no _________ saludablemente.", "answer1" : "comer", "answer2" : "comerá","answer3" : "comiera", "answer4": "coma"
-        "question" : "A nosotros nos molesta que Sofía no _________ saludablemente.","wrong": ["comer", "comerá", "comiera"], "right" : "coma"   
-    },
-    {
-        //"question" : "19. Todos los veranos, nosotros _____________ a las montañas.", "answer1" : "fuimos", "answer2" : "íbamos","answer3" : "fueron", "answer4": "iban"
-        "question" : "Todos los veranos, nosotros _____________ a las montañas.","wrong": ["fuimos","fueron","iban"], "right" : "íbamos"     
-    },
-    {
-        //"question" : "20. Yo __________(conducir) rápidamente cuando el policía me __________(detener).", "answer1" : "conducía, detuvo", "answer2" : "conduciendo, detenía","answer3" : "conducir, detuvo", "answer4": "conduje, detener"
-        "question" : "Yo __________(conducir) rápidamente cuando el policía me __________(detener).", "wrong": ["conduciendo, detenía","conducir, detuvo","conduje, detener"], "right" : "conducía, detuvo"      
-    },
-    {
-        //"question" : "21. Es necesario escribir una carta para el director. La carta ya ______________________.", "answer1" : "es escrita", "answer2" : "haya escrita","answer3" : "está escrito", "answer4": "está escrita"
-        "question" : "Es necesario escribir una carta para el director. La carta ya ______________________.","wrong":["es escrita","haya escrita","está escrito"], "right" : "está escrita"
-    },
-    {
-        //"question" : "22. Mañana ______________ de compras.", "answer1" : "iré", "answer2" : "fui","answer3" : "iba", "answer4": "fue"
-        "question" : "Mañana ______________ de compras.","wrong": ["fui","iba","fue"], "right" : "iré"      
-    },
-    {
-        //"question" : "23. Iré al cine tan pronto como _____________ mi tarea.", "answer1" : "haga", "answer2" : "hice","answer3" : "haré", "answer4": "hago"
-        "question" : "Iré al cine tan pronto como _____________ mi tarea.","wrong": ["hice","haré","hago"], "right" : "haga"        
-    },
-    {
-        //"question" : "24. Dudaba que Joaquín_________ a Europa.", "answer1" : "vaya", "answer2" : "fuera","answer3" : "irá", "answer4": "ir"
-        "question" : "Dudaba que Joaquín_________ a Europa.","wrong":["vaya","irá","ir"], "right" : "fuera"
-    },
-    {
-        //"question" : "25. __________ un coche, si _____________uno.", "answer1" : "Compraría, necesito", "answer2" : "Compraría, necesitaré","answer3" : "Compraría, necesitara", "answer4": "Compraré, necesitaré"
-        "question" : "__________ un coche, si _____________uno.", "wrong": ["Compraría, necesito","Compraría, necesitaré","Compraré, necesitaré"], "right" : "Compraría, necesitara"       
-    }
-        ]
-    };
-    /*the quiz section*/
-    var quiz = document.getElementById("QuizQuestions");
-    /*Used to hold a random order for the quiz */
-    var quizOrder = [];
-    /*Used to hold a random order of choices for each question*/
-    var choiceOrder = [];
-    /*shouldn't need this because the correct answer value should be 4*/
-    var answerKey=[];
-    /*used to hold answers selected by the user. Should be zero'd out on each try*/
-    var selectedAnswers=[];
-    /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
-    var quizLength = json.questions.length;
-    /*variable to control the displayed question*/
-    var quizIterator = 0;
-    /*flushthe current quiz*/
-    function generateQuiz(){
-        
-        while(answerKey.length){
-            answerKey.pop();
-        }
-        /*reset selection. According to: https://jsperf.com/zeroarrayjs , this was the fastest way to zero out an array*/
-        /*in case a future developer wants to change the value of a zero'd out array*/
-        let empty = 0;
-        let tempI = 0;
-        while(tempI < quizLength){
-            selectedAnswers[tempI++] = empty;
-        }
-        while(quizOrder.length < quizLength){
-            let selectedQuestion = Math.floor(Math.random()*quizLength);
-            if(quizOrder.indexOf(selectedQuestion) > -1) continue;
-            quizOrder[quizOrder.length] = selectedQuestion
-        }
-        /*This was the quickest way according to jspref. I, unfortunately, forgot to get the link. */
-        /*while the array holding the random choices is shorter than the array holding the random order for the quiz, make random choices*/
-        while(choiceOrder.length < quizOrder.length){
-            let choices = [1,2,3,4];
-            /*let tempArray = [];*/
-            for (let i = choices.length - 1; i > 0; i--){
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = choices[i];
-                choices[i] = choices[j];
-                choices[j] = temp;
+            computer, laptop, or tablet.
+        </p>
+    </div>
+    <script src="./js/classie.js"></script>
+    <script src="./js/notificationFx.js"></script>
+    <script>
+        var firstTime = 0;
+        var json = {
+            "questions": [
+            {
+                //"question" : "1. ¿__________ es la capital de Texas?", "answer1" : "Qué", "answer2" : "Cuál","answer3" : "Quién", "answer4": "Que"
+                "question": "¿__________ es la capital de Texas?", "wrong": ["Quién", "Que", "Qué"], "right": "Cuál"
+            },
+            {
+                //"question" : "2. ____________ (my) libro está sobre la mesa. Tu libro está debajo de la mesa.", "answer1" : "tu", "answer2" : "tú","answer3" : "mi", "answer4": "sus"
+                "question": "____________ (my) libro está sobre la mesa. Tu libro está debajo de la mesa.", "wrong": ["tu", "tú", "sus"], "right": "mi"
+            },
+            {
+                //"question" :"3. Nueva York es una ciudad ______________.", "answer1" : "norteamericanos", "answer2" : "norteamericano","answer3" : "norteamericana", "answer4": "norteamericanas"
+                "question": "Nueva York es una ciudad ______________.", "wrong": ["norteamericanos", "norteamericano", "norteamericanas"], "right": "norteamericana"
+            },
+            {
+                //"question" :"4. Los estudiantes _______________  en la biblioteca.", "answer1" : "estudian", "answer2" : "estudien","answer3" : "estudiando", "answer4": "estudio"
+                "question": "Los estudiantes _______________  en la biblioteca.", "wrong": ["estudien", "estudiando", "estudio"], "right": "estudian"
+            },
+            {
+                //"question" : "5. ____________ (this) libro es de mi sobrino.", "answer1" : "Ese", "answer2" : "Estos","answer3" : "Estas", "answer4": "Este"
+                "question": " ____________ (this) libro es de mi sobrino.", "wrong": ["Ese", "Estos", "Estas"], "right": "Este"
+            },
+            {
+                //"question" : "6. Los profesores ________________ tomar vacaciones durante el verano.", "answer1" : "quiere", "answer2" : "quiero","answer3" : "quieren", "answer4": "quieres"
+                "question": "Los profesores ________________ tomar vacaciones durante el verano.", "wrong": ["quiere", "quiero", "quieres"], "right": "quieren"
+            },
+            {
+                //"question" : "7. Este fin de semana nosotros ____________ a Houston.", "answer1" : "voy a ir", "answer2" : "vamos a irnos","answer3" : "vamos a ir", "answer4": "van a ir"
+                "question": "Este fin de semana nosotros ____________ a Houston.", "wrong": ["voy a ir", "vamos a irnos", "van a ir"], "right": "vamos a ir"
+            },
+            {
+                //"question" : "8. Mis hermanos ______________ todos los días antes de ir a la escuela.", "answer1" : "se bañan", "answer2" : "nos bañamos","answer3" : "bañan", "answer4": "bañamos"
+                "question": "Mis hermanos ______________ todos los días antes de ir a la escuela.", "wrong": ["nos bañamos", "bañan", "bañamos"], "right": "se bañan"
+            },
+            {
+                //"question" : "9. Mi hermano _________________ una persona agradable. Pero hoy está enojado.", "answer1" : "es", "answer2" : "está","answer3" : "soy", "answer4": "estoy"
+                "question": "Mi hermano _________________ una persona agradable. Pero hoy está enojado.", "wrong": ["está", "soy", "estoy"], "right": "es"
+            },
+            {
+                //"question" : "10. El partido de béisbol es en Dallas.  Dallas _________ en Texas.", "answer1" : "es", "answer2" : "está","answer3" : "soy", "answer4": "estoy"
+                "question": "El partido de béisbol es en Dallas.  Dallas _________ en Texas.", "wrong": ["es", "soy", "estoy"], "right": "está"
+            },
+            {
+                //"question" : "11. El verano en Texas es ___________________ en Nueva York.", "answer1" : "menos caliente", "answer2" : "más caliente que","answer3" : "tan caliente", "answer4": "tanto caliente"
+                "question": "El verano en Texas es ___________________ en Nueva York.", "wrong": ["menos caliente", "tan caliente", "tanto caliente"], "right": "más caliente que"
+            },
+            {
+                //"question" : "12. Jupiter _______ el planeta __________ grande de nuestro sistema solar.", "answer1" : "es, más", "answer2" : "es, tanto","answer3" : "es, tan", "answer4": "es, tanto"
+                "question": "Jupiter _______ el planeta __________ grande de nuestro sistema solar.", "wrong": ["es, tanto", "es, tan", "es, tanto"], "right": "es, más"
+            },
+            {
+                //"question" : "13. Quiero comprar flores para mi madre.  Quiero ______________.", "answer1" : "comprárselas", "answer2" : "compráselos","answer3" : "se los comprar", "answer4": "se los compro"
+                "question": "Quiero comprar flores para mi madre.  Quiero ______________.", "wrong": ["compráselos", "se los comprar", "se los compro"], "right": "comprárselas"
+            },
+            {
+                //"question" : "14. A Rolando ______  __________ nadar en el mar.", "answer1" : "se, gusta", "answer2" : "le, gustan","answer3" : "le, gusta", "answer4": "le, gustar"
+                "question": "A Rolando ______  __________ nadar en el mar.", "wrong": ["se, gusta", "le, gustan", "le, gustar"], "right": "le, gusta"
+            },
+            {
+                //"question" : "15. Anoche yo __________(ir) de compras porque necesitaba comprar un par de zapatos.", "answer1" : "fui", "answer2" : "fue","answer3" : "iré", "answer4": "voy"
+                "question": "Anoche yo __________(ir) de compras porque necesitaba comprar un par de zapatos.", "wrong": ["fue", "iré", "voy"], "right": "fui"
+            },
+            {
+                //"question" : "16. Quiero que Ud _________el periódico.", "answer1" : "lea", "answer2" : "lees","answer3" : "leo", "answer4": "leí"
+                "question": "Quiero que Ud _________el periódico.", "wrong": ["lees", "leo", "leí"], "right": "lea"
+            },
+            {
+                //"question" : "17. Busco un restaurante que ________________ comida china.", "answer1" : "sirva", "answer2" : "sirve","answer3" : "sirvió", "answer4": "servía"
+                "question": "Busco un restaurante que ________________ comida china.", "wrong": ["sirve", "sirvió", "servía"], "right": "sirva"
+            },
+            {
+                //"question" : "18. A nosotros nos molesta que Sofía no _________ saludablemente.", "answer1" : "comer", "answer2" : "comerá","answer3" : "comiera", "answer4": "coma"
+                "question": "A nosotros nos molesta que Sofía no _________ saludablemente.", "wrong": ["comer", "comerá", "comiera"], "right": "coma"
+            },
+            {
+                //"question" : "19. Todos los veranos, nosotros _____________ a las montañas.", "answer1" : "fuimos", "answer2" : "íbamos","answer3" : "fueron", "answer4": "iban"
+                "question": "Todos los veranos, nosotros _____________ a las montañas.", "wrong": ["fuimos", "fueron", "iban"], "right": "íbamos"
+            },
+            {
+                //"question" : "20. Yo __________(conducir) rápidamente cuando el policía me __________(detener).", "answer1" : "conducía, detuvo", "answer2" : "conduciendo, detenía","answer3" : "conducir, detuvo", "answer4": "conduje, detener"
+                "question": "Yo __________(conducir) rápidamente cuando el policía me __________(detener).", "wrong": ["conduciendo, detenía", "conducir, detuvo", "conduje, detener"], "right": "conducía, detuvo"
+            },
+            {
+                //"question" : "21. Es necesario escribir una carta para el director. La carta ya ______________________.", "answer1" : "es escrita", "answer2" : "haya escrita","answer3" : "está escrito", "answer4": "está escrita"
+                "question": "Es necesario escribir una carta para el director. La carta ya ______________________.", "wrong": ["es escrita", "haya escrita", "está escrito"], "right": "está escrita"
+            },
+            {
+                //"question" : "22. Mañana ______________ de compras.", "answer1" : "iré", "answer2" : "fui","answer3" : "iba", "answer4": "fue"
+                "question": "Mañana ______________ de compras.", "wrong": ["fui", "iba", "fue"], "right": "iré"
+            },
+            {
+                //"question" : "23. Iré al cine tan pronto como _____________ mi tarea.", "answer1" : "haga", "answer2" : "hice","answer3" : "haré", "answer4": "hago"
+                "question": "Iré al cine tan pronto como _____________ mi tarea.", "wrong": ["hice", "haré", "hago"], "right": "haga"
+            },
+            {
+                //"question" : "24. Dudaba que Joaquín_________ a Europa.", "answer1" : "vaya", "answer2" : "fuera","answer3" : "irá", "answer4": "ir"
+                "question": "Dudaba que Joaquín_________ a Europa.", "wrong": ["vaya", "irá", "ir"], "right": "fuera"
+            },
+            {
+                //"question" : "25. __________ un coche, si _____________uno.", "answer1" : "Compraría, necesito", "answer2" : "Compraría, necesitaré","answer3" : "Compraría, necesitara", "answer4": "Compraré, necesitaré"
+                "question": "__________ un coche, si _____________uno.", "wrong": ["Compraría, necesito", "Compraría, necesitaré", "Compraré, necesitaré"], "right": "Compraría, necesitara"
             }
-            /*assuming each question only has 4 choices*/
-            if(choices.length >= 3){
-            choiceOrder.push(choices);
+            ]
+        };
+        /*the quiz section*/
+        var quiz = document.getElementById("QuizQuestions");
+        /*Used to hold a random order for the quiz */
+        var quizOrder = [];
+        /*Used to hold a random order of choices for each question*/
+        var choiceOrder = [];
+        /*shouldn't need this because the correct answer value should be 4*/
+        var answerKey = [];
+        /*used to hold answers selected by the user. Should be zero'd out on each try*/
+        var selectedAnswers = [];
+        /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
+        var quizLength = json.questions.length;
+        /*variable to control the displayed question*/
+        var quizIterator = 0;
+        /*flushthe current quiz*/
+        function generateQuiz() {
+
+            while (answerKey.length) {
+                answerKey.pop();
+            }
+            /*reset selection. According to: https://jsperf.com/zeroarrayjs , this was the fastest way to zero out an array*/
+            /*in case a future developer wants to change the value of a zero'd out array*/
+            let empty = 0;
+            let tempI = 0;
+            while (tempI < quizLength) {
+                selectedAnswers[tempI++] = empty;
+            }
+            while (quizOrder.length < quizLength) {
+                let selectedQuestion = Math.floor(Math.random() * quizLength);
+                if (quizOrder.indexOf(selectedQuestion) > -1) continue;
+                quizOrder[quizOrder.length] = selectedQuestion
+            }
+            /*This was the quickest way according to jspref. I, unfortunately, forgot to get the link. */
+            /*while the array holding the random choices is shorter than the array holding the random order for the quiz, make random choices*/
+            while (choiceOrder.length < quizOrder.length) {
+                let choices = [1, 2, 3, 4];
+                /*let tempArray = [];*/
+                for (let i = choices.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = choices[i];
+                    choices[i] = choices[j];
+                    choices[j] = temp;
+                }
+                /*assuming each question only has 4 choices*/
+                if (choices.length >= 3) {
+                    choiceOrder.push(choices);
+                }
+            }
+            for (var i in choiceOrder) {
+                answerKey.push(choiceOrder[i].indexOf(4))
             }
         }
-        for(var i in choiceOrder){
-            answerKey.push(choiceOrder[i].indexOf(4))
+        /*makes sure the number used to navigate through the quiz isn't less than or greater than the number of questions available. Also makes sure the appropriate buttons are visible*/
+        function quizIteratorValidator(int) {
+            quizIterator += int;
+            if (quizIterator < 0) {
+                document.getElementById("btnPrevious").style.visibility = 'hidden';
+                quizIterator = 0;
+            } else if (quizIterator > quizOrder.length) {
+                document.getElementById("btnNext").style.visibility = 'hidden';
+                document.getElementById("btnSubmit").style.visibility = "visible";
+                quizIterator = quizLength - 1;
+                updateQuestion(quizIterator);
+            } else if (quizIterator == quizOrder.length - 1) {
+                document.getElementById("btnNext").style.visibility = 'hidden';
+                document.getElementById("btnSubmit").style.visibility = "visible";
+                updateQuestion(quizIterator);
+            }
+            else {
+                document.getElementById("btnPrevious").style.visibility = "visible";
+                document.getElementById("btnNext").style.visibility = "visible";
+                document.getElementById("btnSubmit").style.visibility = "hidden";
+                updateQuestion(quizIterator);
             }
         }
-    /*makes sure the number used to navigate through the quiz isn't less than or greater than the number of questions available. Also makes sure the appropriate buttons are visible*/
-    function quizIteratorValidator(int){
-        quizIterator += int;
-        if (quizIterator < 0){
-            document.getElementById("btnPrevious").style.visibility  = 'hidden';
-            quizIterator = 0;
-        } else if ( quizIterator > quizOrder.length ){
-            document.getElementById("btnNext").style.visibility  = 'hidden';
-            document.getElementById("btnSubmit").style.visibility="visible";
-            quizIterator = quizLength -1;
-            updateQuestion(quizIterator);
-        } else if (quizIterator == quizOrder.length - 1){
-            document.getElementById("btnNext").style.visibility  = 'hidden';
-            document.getElementById("btnSubmit").style.visibility="visible";
-            updateQuestion(quizIterator);
+        /*submits the user's choice to the selectedAnswers array*/
+        function choseAnswer(int) {
+            selectedAnswers[quizIterator] = int;
         }
-        else {
-            document.getElementById("btnPrevious").style.visibility = "visible";
-            document.getElementById("btnNext").style.visibility = "visible";
-            document.getElementById("btnSubmit").style.visibility="hidden";
-            updateQuestion(quizIterator);
+        /*toggles the quiz's visibility*/
+        function toggleQuiz() {
+            let varQuizWrapper = document.getElementById("quizWrapper");
+            /*ternary assignment <3*/
+            varQuizWrapper.style.display = (varQuizWrapper.style.display != 'none' ? 'none' : '');
+            if (firstTime == 0) {
+                firstTime = 1;
+                generateQuiz();
+                quizIteratorValidator(quizIterator);
+            }
         }
-    }
-/*submits the user's choice to the selectedAnswers array*/
-function choseAnswer(int){
-    selectedAnswers[quizIterator] = int;
-}
-/*toggles the quiz's visibility*/
-    function toggleQuiz(){
-        let varQuizWrapper = document.getElementById("quizWrapper");
-        /*ternary assignment <3*/
-    	varQuizWrapper.style.display = (varQuizWrapper.style.display != 'none' ? 'none' : '' );
-        if (firstTime == 0){
-            firstTime = 1;
-            generateQuiz();
-            quizIteratorValidator(quizIterator);
-        }
-	}
-    /*Updates the question visibile on the website. Uses questionIterator to navigate through the quiz.*/   
-    function updateQuestion(int){
-        /* "(quizIterator + 1).toString()" takes the quizIterator ( a zero based number) and adds one*/
+        /*Updates the question visibile on the website. Uses questionIterator to navigate through the quiz.*/
+        function updateQuestion(int) {
+            /* "(quizIterator + 1).toString()" takes the quizIterator ( a zero based number) and adds one*/
             quiz.innerHTML = "<strong>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</strong></br>";
             /*json.questions[quizOrder[quizIterator]] => json.questions because that's the string values for the quiz, and we use quizIterator as the nTh place of the quiz order.*/
             let questionCurrent = json.questions[quizOrder[quizIterator]];
@@ -278,50 +281,50 @@ function choseAnswer(int){
             /*choiceList.setAttribute("action","javascript:postAnswer(" + quizIterator +");")*/
             quiz.appendChild(choiceList);
             /*for each choice in a set of choices in the choiceOrder array*/
-            for (let i in choiceOrder[quizIterator]){
+            for (let i in choiceOrder[quizIterator]) {
                 /*skeletonRow is used fit within the boilerplate of skeleton.css*/
                 let skeletonRow = document.createElement("div");
                 skeletonRow.setAttribute("class", "row u-full-width");
                 let labelNode = document.createElement("label");
                 let node = document.createElement("input");
-                node.setAttribute("type","radio");
+                node.setAttribute("type", "radio");
                 node.setAttribute("name", "Q" + quizIterator);
-                switch(choiceOrder[quizIterator][i]){
+                switch (choiceOrder[quizIterator][i]) {
                     case 1:
                         node.setAttribute("value", 1);
-                        labelNode.setAttribute("onClick","choseAnswer(1)");
-                        if (selectedAnswers[quizIterator] == 1){ node.checked = true;}
+                        labelNode.setAttribute("onClick", "choseAnswer(1)");
+                        if (selectedAnswers[quizIterator] == 1) { node.checked = true; }
                         labelNode.innerText = questionCurrent.wrong[0];
                         break;
                     case 2:
                         node.setAttribute("value", 2);
-                        labelNode.setAttribute("onClick","choseAnswer(2)");
-                        if (selectedAnswers[quizIterator] == 2){ node.checked = true;}
+                        labelNode.setAttribute("onClick", "choseAnswer(2)");
+                        if (selectedAnswers[quizIterator] == 2) { node.checked = true; }
                         labelNode.innerText = questionCurrent.wrong[1];
                         break;
                     case 3:
                         node.setAttribute("value", 3);
-                        labelNode.setAttribute("onClick","choseAnswer(3)");
-                        if (selectedAnswers[quizIterator] == 3){ node.checked = true;}
+                        labelNode.setAttribute("onClick", "choseAnswer(3)");
+                        if (selectedAnswers[quizIterator] == 3) { node.checked = true; }
                         labelNode.innerText = questionCurrent.wrong[2];
                         break;
                     case 4:
                         node.setAttribute("value", 4);
-                        labelNode.setAttribute("onClick","choseAnswer(4)");
-                        if (selectedAnswers[quizIterator] == 4){ node.checked = true;}
+                        labelNode.setAttribute("onClick", "choseAnswer(4)");
+                        if (selectedAnswers[quizIterator] == 4) { node.checked = true; }
                         labelNode.innerText = questionCurrent.right;
                         break;
                     /*error*/
                     default:
                         let notification = new NotificationFx({
-                            wrapper : document.body,
-                            message : '<div class="ns-thumb"><img class="u-max-full-width"src="http://placehold.it/62"></div><div class="ns-content"><p>oh dear</p></div>',
-                            layout : 'other',
+                            wrapper: document.body,
+                            message: '<div class="ns-thumb"><img class="u-max-full-width"src="http://placehold.it/62"></div><div class="ns-content"><p>oh dear</p></div>',
+                            layout: 'other',
                             effect: 'thumbslider',
                             type: 'error',
                             ttl: 5000,
-                            onClose: function() {return false;},
-                            onOpen: function() {return false;}
+                            onClose: function () { return false; },
+                            onOpen: function () { return false; }
                         });
                         notification.show();
                         console.log("oh dear " + i);
@@ -331,51 +334,51 @@ function choseAnswer(int){
                 labelNode.appendChild(node);
             }
         }
-    function validateAndSubmit(){
-        /*<img class="u-max-full-width" src="./!.png">*/
-        if (selectedAnswers.includes(0)){
-            let notification = new NotificationFx({
-                    wrapper : document.body,
-                    message : '<div onclick="quizIteratorValidator(-' + (quizIterator - selectedAnswers.indexOf(0)) + ')" class="ns-thumb"><i style ="color:palevioletred;" class="fa fa-arrow-circle-o-down fa-3x" aria-hidden="true"></i></div><div class="ns-content"><p>Click here to go to the first missed question</p></div>',
-                    layout : 'other',
+        function validateAndSubmit() {
+            /*<img class="u-max-full-width" src="./!.png">*/
+            if (selectedAnswers.includes(0)) {
+                let notification = new NotificationFx({
+                    wrapper: document.body,
+                    message: '<div onclick="quizIteratorValidator(-' + (quizIterator - selectedAnswers.indexOf(0)) + ')" class="ns-thumb"><i style ="color:palevioletred;" class="fa fa-arrow-circle-o-down fa-3x" aria-hidden="true"></i></div><div class="ns-content"><p>Click here to go to the first missed question</p></div>',
+                    layout: 'other',
                     effect: 'thumbslider',
                     type: 'error',
                     ttl: 10000,
-                    onClose: function() {return false;},
-                    onOpen: function() {return false;}
+                    onClose: function () { return false; },
+                    onOpen: function () { return false; }
                 });
-            notification.show();
-            /*console.log("quiz not complete");*/
-        } else{
-            let rightAnswers = selectedAnswers.reduce(function(n,val){ return n + (val === 4);},0);
-            let notification = new NotificationFx({
-                    wrapper : document.body,
-                    message : '<div class="ns-thumb"><i style ="color:#33C3F0;" class="fa fa-hand-o-right fa-3x" aria-hidden="true"></i></div><div class="ns-content"><p>you got a ' + (rightAnswers/quizLength * 100) + '% grade</p></div>',
-                    layout : 'other',
+                notification.show();
+                /*console.log("quiz not complete");*/
+            } else {
+                let rightAnswers = selectedAnswers.reduce(function (n, val) { return n + (val === 4); }, 0);
+                let notification = new NotificationFx({
+                    wrapper: document.body,
+                    message: '<div class="ns-thumb"><i style ="color:#33C3F0;" class="fa fa-hand-o-right fa-3x" aria-hidden="true"></i></div><div class="ns-content"><p>you got a ' + (rightAnswers / quizLength * 100) + '% grade</p></div>',
+                    layout: 'other',
                     effect: 'thumbslider',
                     type: 'error',
                     ttl: 9000,
-                    onClose: function() {return false;},
-                    onOpen: function() {return false;}
+                    onClose: function () { return false; },
+                    onOpen: function () { return false; }
                 });
-            notification.show();
-            console.log("you got a " + (rightAnswers/quizLength * 100));
+                notification.show();
+                console.log("you got a " + (rightAnswers / quizLength * 100));
+            }
         }
-    }
-/*note to self
---in regards to the question list:
-<ul>
-    <li>List item one</li>
-    <li>List item two with subitems:
+        /*note to self
+        --in regards to the question list:
         <ul>
-            <li>Subitem 1</li>
-            <li>Subitem 2</li>
+            <li>List item one</li>
+            <li>List item two with subitems:
+                <ul>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                </ul>
+            </li>
+            <li>Final list item</li>
         </ul>
-    </li>
-    <li>Final list item</li>
-</ul>
 
-*/
-</script>
-    </body>
-</html> 
+        */
+    </script>
+</body>
+</html>
