@@ -1,0 +1,127 @@
+label{
+    display:inline-block;
+    *display: inline;     /* for IE7*/
+    zoom:1;              /* for IE7*/
+    padding: 5px;
+    text-align: left;
+    min-width: 140px;
+    background-color: seashell;
+    border: 1px solid;
+    border-radius: 5px;
+}
+label input{
+float: left;
+margin-right:10px;
+}
+/*.ns-type-error .ns-box-inner .ns-content{
+
+}*/
+.ns-box-inner .ns-content{
+  background: chartreuse;
+}
+.fa-arrow-circle-o-down{
+position:relative;
+transform:translate(25%,25%)
+}
+.fa-hand-o-right{
+position:relative;
+transform:translate(25%,25%)
+}
+#quizWrapper{
+  background-color: antiquewhite;
+  border: 2px dotted;
+  padding-top: 10px;
+}
+/* Larger than mobile */
+@media (min-width: 400px) {
+
+}   
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+
+}
+    
+/* Larger than tablet */
+@media (min-width: 750px) {
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+
+}
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #00a087;
+}
+.content {
+  margin-top: 20px;
+}
+
+/* Example responsive navigation menu  */
+.fixed-nav-bar li, .fixed-nav-bar a { 
+  height: 50px;
+  line-height: 50px;
+}
+.menu {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.menu a, .menu a:visited {
+  color: #ffffff;
+}
+.menu a:hover, .menu a:target {
+  color: #ebebeb;
+}
+.menu-items {
+  display: inline-block;
+}
+.sitename {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+a.sitename, a:visited.sitename {
+  color: #e0e0e0;
+}
+.menu-items li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-items a {
+  text-decoration: none;
+}
+.show, .hide {
+  display: none;
+  padding-left: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #dde1e2;
+}
+.show {
+  background-image: url(assets/down-arrow-icon.png);
+}
+.hide {
+  background-image: url(assets/up-arrow-icon.png);
+}
+ul.expectations{
+  list-style-type: circle;
+}
+ul.process {
+  list-style-type: disc;
+}
