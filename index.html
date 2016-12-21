@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./css/normalize.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./vendor/css/normalize.css" media="screen" />
     <!--http://getskeleton.com/ -->
     <!--http://sixrevisions.com/css/fixed-navigation-bar/ -->
     <!-- for navbar on bottom use z-index: 9999; -->
@@ -11,9 +11,11 @@
     <script src="./js/modernizr.custom.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/ns-default.css"/>
     <link rel="stylesheet" type="text/css" href="./css/ns-style-other.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" media="screen" />-->
+    <link rel="stylesheet" type="text/css" href="./vendor/css/skeleton.css"
     <link rel="stylesheet" type="text/css" href="./css/custom.css" media="screen" />
     <script src="https://use.fontawesome.com/7592d3539c.js"></script>
+    <script src="./js/quizReader.js"></script>
 </head>
 <body>
     <div class="container">
@@ -75,7 +77,8 @@
     <script src="./js/notificationFx.js"></script>
     <script>
         var firstTime = 0;
-        var json = {
+        //var quiz = 
+        /*var json = {
             "questions": [
             {
                 //"question" : "1. ¿__________ es la capital de Texas?", "answer1" : "Qué", "answer2" : "Cuál","answer3" : "Quién", "answer4": "Que"
@@ -178,59 +181,14 @@
                 "question": "__________ un coche, si _____________uno.", "wrong": ["Compraría, necesito", "Compraría, necesitaré", "Compraré, necesitaré"], "right": "Compraría, necesitara"
             }
             ]
-        };
+        };*/
         /*the quiz section*/
         var quiz = document.getElementById("QuizQuestions");
-        /*Used to hold a random order for the quiz */
-        var quizOrder = [];
-        /*Used to hold a random order of choices for each question*/
-        var choiceOrder = [];
-        /*shouldn't need this because the correct answer value should be 4*/
-        var answerKey = [];
-        /*used to hold answers selected by the user. Should be zero'd out on each try*/
-        var selectedAnswers = [];
         /*in case the quiz is modified, I'm not going to assume the quiz is 25 questions.*/
-        var quizLength = json.questions.length;
+        //var quizLength = json.questions.length;
+        var quizLength = getQuizLength();
         /*variable to control the displayed question*/
         var quizIterator = 0;
-        /*flushthe current quiz*/
-        function generateQuiz() {
-
-            while (answerKey.length) {
-                answerKey.pop();
-            }
-            /*reset selection. According to: https://jsperf.com/zeroarrayjs , this was the fastest way to zero out an array*/
-            /*in case a future developer wants to change the value of a zero'd out array*/
-            let empty = 0;
-            let tempI = 0;
-            while (tempI < quizLength) {
-                selectedAnswers[tempI++] = empty;
-            }
-            while (quizOrder.length < quizLength) {
-                let selectedQuestion = Math.floor(Math.random() * quizLength);
-                if (quizOrder.indexOf(selectedQuestion) > -1) continue;
-                quizOrder[quizOrder.length] = selectedQuestion
-            }
-            /*This was the quickest way according to jspref. I, unfortunately, forgot to get the link. */
-            /*while the array holding the random choices is shorter than the array holding the random order for the quiz, make random choices*/
-            while (choiceOrder.length < quizOrder.length) {
-                let choices = [1, 2, 3, 4];
-                /*let tempArray = [];*/
-                for (let i = choices.length - 1; i > 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
-                    var temp = choices[i];
-                    choices[i] = choices[j];
-                    choices[j] = temp;
-                }
-                /*assuming each question only has 4 choices*/
-                if (choices.length >= 3) {
-                    choiceOrder.push(choices);
-                }
-            }
-            for (var i in choiceOrder) {
-                answerKey.push(choiceOrder[i].indexOf(4))
-            }
-        }
         /*makes sure the number used to navigate through the quiz isn't less than or greater than the number of questions available. Also makes sure the appropriate buttons are visible*/
         function quizIteratorValidator(int) {
             quizIterator += int;
@@ -265,16 +223,16 @@
             varQuizWrapper.style.display = (varQuizWrapper.style.display != 'none' ? 'none' : '');
             if (firstTime == 0) {
                 firstTime = 1;
-                generateQuiz();
+                newAttempt();
                 quizIteratorValidator(quizIterator);
             }
         }
         /*Updates the question visibile on the website. Uses questionIterator to navigate through the quiz.*/
         function updateQuestion(int) {
             /* "(quizIterator + 1).toString()" takes the quizIterator ( a zero based number) and adds one*/
-            quiz.innerHTML = "<strong>" + (quizIterator + 1).toString() + ". " + json.questions[quizOrder[quizIterator]].question + "</strong></br>";
-            /*json.questions[quizOrder[quizIterator]] => json.questions because that's the string values for the quiz, and we use quizIterator as the nTh place of the quiz order.*/
-            let questionCurrent = json.questions[quizOrder[quizIterator]];
+            /*json.questions[quizOrder[quizIterator]] => quizJson.questions because that's the string values for the quiz, and we use quizIterator as the nTh place of the quiz order.*/
+            let questionCurrent = quizJson.questions[quizOrder[quizIterator]];
+            quiz.innerHTML = "<strong>" + (quizIterator + 1).toString() + ". " + questionCurrent.question + "</strong></br>";
             /*making the multiple choice selections*/
             let choiceList = document.createElement("form");
             choiceList.setAttribute("id", "listOfChoices");
