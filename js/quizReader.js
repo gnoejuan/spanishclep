@@ -81,13 +81,17 @@ var quizJson ={
             ]
         }
 /*Used to hold a random order for the quiz */
-var quizOrder = [];
+let quizOrder = [];
 /*Used to hold a random order of choices for each question*/
 var choiceOrder = [];
 /*shouldn't need this because the correct answer value should be 4*/
 var answerKey = [];
 /*used to hold answers selected by the user. Should be zero'd out on each try*/
 var selectedAnswers = [];
+var generatedQuiz = [];
+function getQuizLength(){
+    return quizJson.questions.length;
+    }
 function newAttempt(){
     while (answerKey.length) {
         answerKey.pop();
@@ -99,6 +103,7 @@ function newAttempt(){
     while (tempI < quizLength) {
         selectedAnswers[tempI++] = empty;
         }
+    /*generating the random order*/
     while (quizOrder.length < quizLength) {
         let selectedQuestion = Math.floor(Math.random() * quizLength);
         if (quizOrder.indexOf(selectedQuestion) > -1) continue;
@@ -123,7 +128,8 @@ function newAttempt(){
         for (var i in choiceOrder) {
             answerKey.push(choiceOrder[i].indexOf(4))
             }
-    }
-function getQuizLength(){
-    return quizJson.questions.length;
+        for (let questionIterator = 0; questionIterator < getQuizLength(); questionIterator ++){
+            generatedQuiz[questionIterator] = quizJson.questions[quizOrder[questionIterator]];
+        }
+    return generatedQuiz;
     }
